@@ -1,0 +1,13 @@
+<%_ if (enableMarkdownlint) { _%>
+// markdownlint-cli2 config. The shared rule set is an ESM-only package,
+// so we require its default export and pass it as cli2's `config` option.
+// Read by markdownlint-cli2 (CLI) and the VS Code markdownlint extension —
+// per the cli2 README, `.markdownlint-cli2.cjs` outranks `.markdownlint.cjs`,
+// so both tools pick up the `ignores` field here.
+const config = require('@linter-spec/markdownlint-config').default;
+
+module.exports = {
+  config,
+  ignores: [<%- markdownLintIgnores.map((txt) => `'${txt}'`).join(', ') %>],
+};
+<%_ } _%>

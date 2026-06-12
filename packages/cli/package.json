@@ -1,0 +1,88 @@
+{
+  "name": "@linter-spec/cli",
+  "version": "1.0.0",
+  "description": "One-command lint toolchain (ESLint / Stylelint / markdownlint / Prettier / commitlint) for the linter-spec spec.",
+  "type": "module",
+  "author": "SotherWind",
+  "license": "MIT",
+  "homepage": "https://github.com/SotherWind/linter-spec/tree/main/packages/cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SotherWind/linter-spec.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/SotherWind/linter-spec/issues"
+  },
+  "keywords": [
+    "lint",
+    "cli",
+    "eslint",
+    "stylelint",
+    "prettier",
+    "linter-spec"
+  ],
+  "bin": {
+    "linter-spec": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc && node scripts/copy-templates.mjs",
+    "dev": "tsc -w",
+    "pretest": "pnpm build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@inquirer/prompts": "^8.5.2",
+    "@linter-spec/commitlint-config": "workspace:^",
+    "@linter-spec/eslint-config": "workspace:^",
+    "@linter-spec/markdownlint-config": "workspace:^",
+    "@linter-spec/stylelint-config": "workspace:^",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "cross-spawn": "^7.0.6",
+    "ejs": "^6.0.1",
+    "eslint": "^9.39.4",
+    "execa": "^9.6.1",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.5",
+    "is-docker": "^4.0.0",
+    "markdownlint": "^0.34.0",
+    "markdownlint-cli2": "^0.14.0",
+    "markdownlint-rule-helpers": "^0.25.0",
+    "ora": "^9.4.0",
+    "prettier": "^3.8.3",
+    "strip-ansi": "^7.2.0",
+    "stylelint": "^17.13.0",
+    "terminal-link": "^5.0.0",
+    "text-table": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.6",
+    "@types/ejs": "^3.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.7.0",
+    "@types/text-table": "^0.2.5",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}

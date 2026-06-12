@@ -1,0 +1,16 @@
+<%
+const spec = eslintType === 'index'
+  ? '@linter-spec/eslint-config'
+  : `@linter-spec/eslint-config/${eslintType}`;
+%>import config from '<%= spec %>';
+
+export default [
+  ...config,
+  {
+    ignores: [
+<%_ eslintIgnores.forEach((pattern) => { _%>
+      '<%= pattern %>',
+<%_ }); _%>
+    ],
+  },
+];

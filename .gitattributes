@@ -1,0 +1,25 @@
+# Line-ending policy: the working tree uses CRLF (matches .editorconfig / .prettierrc.cjs).
+# `text=auto` still normalizes the stored blob to LF, so Git history and diffs stay clean;
+# `eol=crlf` checks files out as CRLF on every platform, so the convention is uniform.
+* text=auto eol=crlf
+
+# --- Must stay LF regardless of the CRLF default ---
+# Shell scripts and Git hooks: a trailing `\r` breaks the `sh` shebang
+# ("bad interpreter") and would make every Husky hook fail.
+*.sh     text eol=lf
+.husky/* text eol=lf
+
+# Test fixtures are byte-exact inputs/expectations compared against tool output
+# (e.g. the autofix test diffs against prettier's default-LF output). The CRLF
+# working-tree convention must not reflow them or those comparisons break.
+**/test/fixtures/** text eol=lf
+
+# --- Binary assets: never apply line-ending conversion ---
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary

@@ -1,0 +1,14 @@
+node_modules
+dist
+coverage
+CHANGELOG.md
+pnpm-lock.yaml
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# Test fixtures are crafted inputs (sometimes deliberately malformed) — Prettier
+# must not reformat them or it would change what the linters are tested against.
+**/test/fixtures/
+
+# Markdown is owned by markdownlint (@linter-spec/markdownlint-config), not Prettier.
+*.md

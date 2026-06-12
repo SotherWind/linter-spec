@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+# Fast, staged-file-scoped checks only. The full test suite runs on pre-push.
+set -e
+
+files=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$files" ] && exit 0
+
+# Format check (Prettier skips ignored/unknown types via .prettierignore + --ignore-unknown).
+# `-n 50` batches arguments: Windows' 8KB command-line cap (cmd.exe) is hit
+# by a single xargs call once ~100+ paths are staged (xargs in Git-Bash uses
+# Linux's much larger cap by default and won't split on its own).
+printf '%s\n' "$files" | xargs -n 50 pnpm exec prettier --check --ignore-unknown
+
+# Markdown lint, only when Markdown is staged.
+md=$(printf '%s\n' "$files" | grep -iE '\.md$' || true)
+if [ -n "$md" ]; then
+  printf '%s\n' "$md" | xargs -n 50 pnpm exec markdownlint-cli2
+fi

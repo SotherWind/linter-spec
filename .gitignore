@@ -38,3 +38,6 @@ docs/.vitepress/cache/
 # Temp
 tmp/
 .cache/
+
+# Claude Code (personal local settings; shared .claude/settings.json stays tracked)
+.claude/settings.local.json

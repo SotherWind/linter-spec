@@ -1,0 +1,60 @@
+{
+  "name": "linter-spec",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend linting & coding-style specification (ESLint / Stylelint / commitlint / markdownlint / Prettier) as a unified toolchain",
+  "author": "SotherWind",
+  "license": "MIT",
+  "homepage": "https://github.com/SotherWind/linter-spec",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SotherWind/linter-spec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SotherWind/linter-spec/issues"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --workspace-concurrency=1 run build",
+    "test": "pnpm -r --workspace-concurrency=1 run test",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "lint": "pnpm run lint:md && pnpm run lint:js",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#**/dist\"",
+    "lint:js": "eslint .",
+    "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm -r build && changeset publish",
+    "postinstall": "pnpm -r --filter @linter-spec/markdownlint-config --filter @linter-spec/commitlint-config --filter @linter-spec/eslint-config build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/lint": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
+    "@linter-spec/commitlint-config": "workspace:*",
+    "@linter-spec/eslint-config": "workspace:*",
+    "@linter-spec/markdownlint-config": "workspace:*",
+    "@types/node": "^22.7.0",
+    "@vitest/coverage-v8": "^2.1.1",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "eslint": "^9.12.0",
+    "eslint-plugin-n": "^17.10.3",
+    "husky": "^9.1.6",
+    "markdownlint-cli2": "^0.14.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.1",
+    "vitepress": "^1.4.0",
+    "vitest": "^2.1.1"
+  }
+}

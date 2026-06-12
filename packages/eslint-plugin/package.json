@@ -1,0 +1,55 @@
+{
+  "name": "@linter-spec/eslint-plugin",
+  "version": "1.0.0",
+  "description": "Custom ESLint rules used by linter-spec: no-http-url, no-secret-info, no-broad-semantic-versioning, no-js-in-ts-project.",
+  "author": "SotherWind",
+  "license": "MIT",
+  "homepage": "https://github.com/SotherWind/linter-spec/tree/main/packages/eslint-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SotherWind/linter-spec.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/SotherWind/linter-spec/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "linter-spec"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc -w",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "eslint": "^9.12.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}

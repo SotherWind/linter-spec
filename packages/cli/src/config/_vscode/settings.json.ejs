@@ -1,0 +1,26 @@
+<%
+const settings = {};
+if (enableESLint) {
+  settings['eslint.validate'] = [
+    'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue',
+  ];
+}
+if (enableStylelint) {
+  settings['stylelint.validate'] = stylelintExt.map((ext) => ext.replace(/^\./, ''));
+}
+settings['editor.codeActionsOnSave'] = {
+  'source.fixAll.eslint': 'explicit',
+  ...(enableStylelint ? { 'source.fixAll.stylelint': 'explicit' } : {}),
+  ...(enableMarkdownlint ? { 'source.fixAll.markdownlint': 'explicit' } : {}),
+};
+if (enablePrettier) {
+  settings['editor.defaultFormatter'] = 'esbenp.prettier-vscode';
+  for (const lang of [
+    'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue',
+    'css', 'less', 'scss', 'html', 'json', 'jsonc',
+  ]) {
+    settings[`[${lang}]`] = { 'editor.defaultFormatter': 'esbenp.prettier-vscode' };
+  }
+}
+settings['editor.formatOnSave'] = Boolean(enablePrettier);
+%><%- JSON.stringify(settings, null, 2) %>

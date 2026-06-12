@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# Full verification before sharing commits. Per-commit checks stay fast (see pre-commit).
+pnpm -r --workspace-concurrency=1 run test

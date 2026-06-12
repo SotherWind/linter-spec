@@ -1,0 +1,56 @@
+{
+  "name": "@linter-spec/commitlint-config",
+  "version": "1.0.0",
+  "description": "Shareable commitlint config used by linter-spec — conventional-commits based.",
+  "author": "SotherWind",
+  "license": "MIT",
+  "homepage": "https://github.com/SotherWind/linter-spec/tree/main/packages/commitlint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SotherWind/linter-spec.git",
+    "directory": "packages/commitlint-config"
+  },
+  "bugs": {
+    "url": "https://github.com/SotherWind/linter-spec/issues"
+  },
+  "keywords": [
+    "commitlint",
+    "commitlint-config",
+    "conventional-commits",
+    "linter-spec"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc -w",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^8.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/lint": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}
