@@ -1,0 +1,46 @@
+name: Release
+
+# Changesets flow: pushing changesets to main opens/updates a "Version Packages"
+# PR; merging that PR publishes the changed packages to npm and tags each one.
+on:
+  push:
+    branches: [main]
+
+# Never run two releases at once (a second push must wait, not race the publish).
+concurrency: ${{ github.workflow }}
+
+permissions:
+  contents: write # push the version-bump commit + tags, create GitHub Releases
+  pull-requests: write # open/update the "Version Packages" PR
+  id-token: write # npm provenance (supply-chain attestation)
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # `release` (build + changeset publish) needs npm auth; write it to the
+      # runner's user-level .npmrc so it never touches the committed one.
+      - name: Authenticate to npm
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Create release PR or publish to npm
+        uses: changesets/action@v1
+        with:
+          version: pnpm run version-packages
+          publish: pnpm run release
+          commit: 'chore(release): version packages'
+          title: 'chore(release): version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true

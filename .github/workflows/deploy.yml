@@ -1,0 +1,60 @@
+name: Deploy docs to GitHub Pages
+
+on:
+  # Only deploy after CI succeeds on main — never publish docs for code that
+  # failed tests. workflow_dispatch stays for manual re-deploys.
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deploy; cancel queued runs so the newest push wins.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # workflow_run fires on every CI completion (incl. failures); skip unless it
+    # passed. workflow_dispatch has no triggering run, so always allow it.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # docs:build needs the workspace config packages built (markdownlint
+      # config etc. are imported by .markdownlint-cli2.cjs at the root).
+      - run: pnpm -r build
+
+      - run: pnpm docs:build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
