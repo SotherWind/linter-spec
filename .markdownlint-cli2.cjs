@@ -12,7 +12,8 @@ module.exports = {
     '**/node_modules/**',
     '**/dist/**',
     'docs/.vitepress/**',
-    'CHANGELOG.md',
+    // Tooling-generated changelogs (root + per-package, written by changesets).
+    '**/CHANGELOG.md',
     // Changeset files are tooling-managed (frontmatter + short summary), not prose.
     '.changeset/**',
   ],

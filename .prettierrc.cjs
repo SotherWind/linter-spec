@@ -9,5 +9,8 @@ module.exports = {
   trailingComma: 'all',
   bracketSpacing: true,
   arrowParens: 'always',
-  endOfLine: 'crlf',
+  // `auto` defers to whatever line endings the file already uses, so the
+  // pre-commit prettier --check passes both on Windows (CRLF working tree) and
+  // on Linux runners (LF), e.g. the changesets bot's `Version Packages` commit.
+  endOfLine: 'auto',
 };

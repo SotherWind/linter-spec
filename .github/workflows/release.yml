@@ -17,6 +17,13 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    # Skip husky install: pre-commit hooks exist to catch HUMAN style mistakes.
+    # The changesets bot's "Version Packages" commit is deterministic tooling
+    # output (JSON.stringify'd package.json, generated CHANGELOG.md) and won't
+    # match the project's prettier/markdownlint rules — letting hooks run here
+    # only blocks releases on cosmetic disagreements.
+    env:
+      HUSKY: '0'
     steps:
       - uses: actions/checkout@v4
 
