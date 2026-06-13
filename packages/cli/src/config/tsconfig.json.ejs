@@ -25,6 +25,6 @@ _%>
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["src/**/*"<% if (isReact) { %>, "src/**/*.tsx"<% } %><% if (isVue) { %>, "src/**/*.vue"<% } %>],
-  "exclude": ["node_modules", "dist", "build", "coverage"]
+  "include": ["**/*.ts"<% if (isReact) { %>, "**/*.tsx"<% } %><% if (isVue) { %>, "**/*.vue"<% } %>],
+  "exclude": ["node_modules", "dist", "build", "coverage", ".next", ".nuxt", ".turbo"]
 }

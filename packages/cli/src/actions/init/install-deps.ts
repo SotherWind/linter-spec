@@ -32,6 +32,30 @@ export interface ProjectDepsConfig {
 }
 
 /**
+ * Version ranges to pin so npm/pnpm don't pull a major that the config doesn't
+ * support yet. Mirrors `@linter-spec/eslint-config`'s `peerDependencies` —
+ * e.g., ESLint 10 changed `context.getFilename()` to `context.filename`, which
+ * crashes `eslint-plugin-react@7` at rule-load time. Keep this in sync with
+ * eslint-config's peers if those ranges bump.
+ */
+const PINNED_VERSIONS: Readonly<Record<string, string>> = {
+  eslint: '^9.0.0',
+  typescript: '^5.6.2',
+  'typescript-eslint': '^8.8.1',
+  'eslint-plugin-react': '^7.37.1',
+  'eslint-plugin-react-hooks': '^5.0.0',
+  'eslint-plugin-jsx-a11y': '^6.10.0',
+  'eslint-plugin-vue': '^9.28.0',
+  'vue-eslint-parser': '^9.4.3',
+  'eslint-plugin-n': '^17.10.3',
+};
+
+function pin(name: string): string {
+  const v = PINNED_VERSIONS[name];
+  return v ? `${name}@${v}` : name;
+}
+
+/**
  * The npm packages to install as devDependencies of the user's project so that
  * the generated `eslint.config.mjs` (and friends) can resolve everything they
  * need — including peers of `@linter-spec/eslint-config` that are marked
@@ -81,7 +105,7 @@ export function projectDepsToInstall(config: ProjectDepsConfig): string[] {
     deps.add('prettier');
   }
 
-  return [...deps];
+  return [...deps].map(pin);
 }
 
 /**
