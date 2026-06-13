@@ -1,5 +1,7 @@
 import path from 'node:path';
+
 import fg from 'fast-glob';
+
 import type { ScanOptions } from '../types.js';
 
 /**

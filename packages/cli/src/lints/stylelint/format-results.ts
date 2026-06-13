@@ -1,6 +1,7 @@
 import type { LintResult } from 'stylelint';
-import type { ScanResult } from '../../types.js';
+
 import { getStylelintRuleDocUrl } from './get-doc-url.js';
+import type { ScanResult } from '../../types.js';
 
 /**
  * Normalise Stylelint results into the shared `ScanResult` shape.

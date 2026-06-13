@@ -1,8 +1,7 @@
 import type { Linter } from 'eslint';
 
-import jsxA11yRules from '../rules/jsx-a11y.js';
-
 import base from './base.js';
+import jsxA11yRules from '../rules/jsx-a11y.js';
 
 /**
  * Standalone jsx-a11y preset. Use this when you want JSX a11y checks without

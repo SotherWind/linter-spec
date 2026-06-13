@@ -1,6 +1,6 @@
+import type { ESLint, Linter } from 'eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import type { ESLint, Linter } from 'eslint';
 
 /**
  * React + react-hooks rules. Composes eslint-plugin-react's flat-config

@@ -1,6 +1,6 @@
 import js from '@eslint/js';
-import globals from 'globals';
 import type { Linter } from 'eslint';
+import globals from 'globals';
 
 import bestPractices from '../rules/best-practices.js';
 import es6 from '../rules/es6.js';

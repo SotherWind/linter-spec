@@ -1,5 +1,6 @@
-import { describe, it, expect } from 'vitest';
 import lint from '@commitlint/lint';
+import { describe, it, expect } from 'vitest';
+
 import config from '../src/index';
 
 const rules = config.rules ?? {};

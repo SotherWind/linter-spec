@@ -1,10 +1,10 @@
-import { describe, it, expect } from 'vitest';
 import { Linter } from 'eslint';
+import { describe, it, expect } from 'vitest';
 
 import base from '../src/configs/base.js';
 import es5 from '../src/configs/es5.js';
-import essential from '../src/configs/essential/index.js';
 import essentialEs5 from '../src/configs/essential/es5.js';
+import essential from '../src/configs/essential/index.js';
 import essentialReact from '../src/configs/essential/react.js';
 import essentialTypescript from '../src/configs/essential/typescript/index.js';
 import essentialTypescriptReact from '../src/configs/essential/typescript/react.js';

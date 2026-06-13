@@ -1,4 +1,5 @@
 import type { ESLint } from 'eslint';
+
 import type { ScanResult } from '../../types.js';
 
 /**

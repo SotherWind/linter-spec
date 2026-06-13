@@ -1,4 +1,5 @@
 import type markdownlint from 'markdownlint';
+
 import type { ScanResult } from '../../types.js';
 
 /**

@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import { program } from 'commander';
+
 import { registerCommands } from './commands/index.js';
-import { messages } from './utils/messages.js';
 import { CLI_NAME, PKG_VERSION } from './utils/constants.js';
+import { messages } from './utils/messages.js';
 
 const cwd = process.cwd();
 

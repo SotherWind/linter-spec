@@ -1,5 +1,6 @@
-import { ESLint, type Linter } from 'eslint';
 import path from 'node:path';
+
+import { ESLint, type Linter } from 'eslint';
 
 export interface LintRunResult {
   ruleIds: string[];

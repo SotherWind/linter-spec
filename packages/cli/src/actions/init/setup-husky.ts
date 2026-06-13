@@ -1,7 +1,9 @@
 import path from 'node:path';
+
 import fs from 'fs-extra';
-import { CLI_NAME } from '../../utils/constants.js';
+
 import type { PKG } from '../../types.js';
+import { CLI_NAME } from '../../utils/constants.js';
 
 /**
  * Configure git commit hooks via husky v9.

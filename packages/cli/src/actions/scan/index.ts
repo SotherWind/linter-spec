@@ -1,9 +1,11 @@
 import path from 'node:path';
+
 import fs from 'fs-extra';
+
+import { orchestrate } from './orchestrate.js';
+import type { Config, PKG, ScanOptions, ScanReport } from '../../types.js';
 import { CLI_NAME } from '../../utils/constants.js';
 import { readLinterSpecConfig } from '../../utils/read-config.js';
-import type { Config, PKG, ScanOptions, ScanReport } from '../../types.js';
-import { orchestrate } from './orchestrate.js';
 
 /**
  * Read project config, run the linters, and (optionally) write a JSON report.

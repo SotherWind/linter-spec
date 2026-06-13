@@ -1,8 +1,7 @@
 import { describe, it, expect } from 'vitest';
 
-import nodeConfig from '../src/configs/node.js';
-
 import { runLint } from './helpers/run-lint.js';
+import nodeConfig from '../src/configs/node.js';
 
 describe('@linter-spec/eslint-config/node', () => {
   it('exports a non-empty flat-config array', () => {

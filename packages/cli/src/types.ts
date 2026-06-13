@@ -1,6 +1,6 @@
 import type { ESLint } from 'eslint';
-import type stylelint from 'stylelint';
 import type markdownlint from 'markdownlint';
+import type stylelint from 'stylelint';
 
 export interface PKG {
   eslintConfig?: unknown;

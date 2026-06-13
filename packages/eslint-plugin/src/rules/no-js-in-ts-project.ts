@@ -1,4 +1,5 @@
 import path from 'node:path';
+
 import type { Rule } from 'eslint';
 
 const JS_REG = /\.jsx?$/;

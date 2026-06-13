@@ -1,8 +1,9 @@
 import chalk from 'chalk';
-import table from 'text-table';
-import terminalLink from 'terminal-link';
 import isDocker from 'is-docker';
 import stripAnsi from 'strip-ansi';
+import terminalLink from 'terminal-link';
+import table from 'text-table';
+
 import { CLI_NAME, UNICODE } from './constants.js';
 import type { ScanMessage, ScanResult } from '../types.js';
 

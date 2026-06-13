@@ -1,8 +1,10 @@
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import fs from 'fs-extra';
+import { fileURLToPath } from 'node:url';
+
 import fg from 'fast-glob';
+import fs from 'fs-extra';
 import type { LinterOptions } from 'stylelint';
+
 import type { Config, PKG, ScanOptions } from '../../types.js';
 import { STYLELINT_IGNORE_PATTERN } from '../../utils/constants.js';
 

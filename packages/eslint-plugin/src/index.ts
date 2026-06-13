@@ -1,11 +1,10 @@
 import type { ESLint, Linter, Rule } from 'eslint';
 
+import pkg from '../package.json' with { type: 'json' };
 import noBroadSemanticVersioning from './rules/no-broad-semantic-versioning.js';
 import noHttpUrl from './rules/no-http-url.js';
 import noJsInTsProject from './rules/no-js-in-ts-project.js';
 import noSecretInfo from './rules/no-secret-info.js';
-
-import pkg from '../package.json' with { type: 'json' };
 
 const PLUGIN_NAME = '@linter-spec';
 

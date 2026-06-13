@@ -1,10 +1,11 @@
 import type { Command } from 'commander';
+
 import init from '../actions/init/index.js';
 import { writeVSCodeConfig } from '../actions/init/write-vscode.js';
-import { readLinterSpecConfig } from '../utils/read-config.js';
 import { CliAbortError } from '../utils/errors.js';
 import log from '../utils/log.js';
 import { messages } from '../utils/messages.js';
+import { readLinterSpecConfig } from '../utils/read-config.js';
 
 export function registerInit(program: Command, cwd: string): void {
   program

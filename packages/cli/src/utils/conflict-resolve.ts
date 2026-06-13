@@ -1,12 +1,14 @@
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import fs from 'fs-extra';
-import fg from 'fast-glob';
+import { fileURLToPath } from 'node:url';
+
 import { confirm } from '@inquirer/prompts';
-import log from './log.js';
-import { messages } from './messages.js';
+import fg from 'fast-glob';
+import fs from 'fs-extra';
+
 import { CliAbortError } from './errors.js';
 import { SKIP_IF_EXISTS } from './generate-template.js';
+import log from './log.js';
+import { messages } from './messages.js';
 import type { PKG } from '../types.js';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));

@@ -1,9 +1,10 @@
 import ora from 'ora';
-import scanAction from './actions/scan/index.js';
+
 import initAction from './actions/init/index.js';
-import printReport from './utils/print-report.js';
-import { messages } from './utils/messages.js';
+import scanAction from './actions/scan/index.js';
 import type { InitOptions, ScanOptions, ScanReport } from './types.js';
+import { messages } from './utils/messages.js';
+import printReport from './utils/print-report.js';
 
 /** Programmatically initialise a project (never self-updates the CLI). */
 export const init = (options: Omit<InitOptions, 'checkVersionUpdate'>): Promise<void> =>

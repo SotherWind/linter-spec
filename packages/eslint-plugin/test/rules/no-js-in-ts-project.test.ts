@@ -1,5 +1,6 @@
 import { RuleTester } from 'eslint';
 import * as vitest from 'vitest';
+
 import rule from '../../src/rules/no-js-in-ts-project.js';
 
 RuleTester.it = vitest.it;

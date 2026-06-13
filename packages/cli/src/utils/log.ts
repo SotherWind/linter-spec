@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+
 import { CLI_NAME, UNICODE } from './constants.js';
 
 const { green, blue, yellow, red } = chalk;

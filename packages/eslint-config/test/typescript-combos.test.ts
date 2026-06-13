@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 
+import tsNode from '../src/configs/typescript/node.js';
 import tsReact from '../src/configs/typescript/react.js';
 import tsVue from '../src/configs/typescript/vue.js';
-import tsNode from '../src/configs/typescript/node.js';
 
 describe('@linter-spec/eslint-config/typescript/* combo configs', () => {
   it('typescript/react exports a flat-config array', () => {

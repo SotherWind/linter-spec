@@ -1,8 +1,9 @@
-import fg from 'fast-glob';
 import type { ESLint, Linter } from 'eslint';
+import fg from 'fast-glob';
+
+import { eslintConfigSpecifier, getESLintConfigType } from './get-config-type.js';
 import type { Config, PKG, ScanOptions } from '../../types.js';
 import { ESLINT_IGNORE_GLOBS } from '../../utils/constants.js';
-import { eslintConfigSpecifier, getESLintConfigType } from './get-config-type.js';
 
 /** True when the project ships its own ESLint flat config / inline config. */
 function hasUserConfig(cwd: string, pkg: PKG): boolean {

@@ -1,8 +1,7 @@
 import { describe, it, expect } from 'vitest';
 
-import es5 from '../src/configs/es5.js';
-
 import { runLint } from './helpers/run-lint.js';
+import es5 from '../src/configs/es5.js';
 
 describe('@linter-spec/eslint-config/es5', () => {
   it('exports a non-empty flat-config array', () => {

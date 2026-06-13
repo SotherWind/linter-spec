@@ -1,7 +1,9 @@
 import path from 'node:path';
+
+import markdownlintConfig from '@linter-spec/markdownlint-config';
 import fg from 'fast-glob';
 import markdownlint from 'markdownlint';
-import markdownlintConfig from '@linter-spec/markdownlint-config';
+
 import type { Config, PKG, ScanOptions } from '../../types.js';
 
 export type MarkdownlintOptions = markdownlint.Options & { fix?: boolean };

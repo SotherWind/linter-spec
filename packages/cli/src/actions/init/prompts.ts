@@ -1,4 +1,5 @@
 import { select, confirm } from '@inquirer/prompts';
+
 import { PROJECT_TYPES } from '../../utils/constants.js';
 import { messages } from '../../utils/messages.js';
 

@@ -1,7 +1,6 @@
 import type { Linter } from 'eslint';
 
 import { softenStylistic } from '../../helpers/soften-stylistic.js';
-
 import base from '../base.js';
 
 /**

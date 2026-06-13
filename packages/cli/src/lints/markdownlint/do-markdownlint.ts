@@ -1,6 +1,7 @@
 import fsExtra from 'fs-extra';
 import markdownlint, { type LintError } from 'markdownlint';
 import { applyFixes } from 'markdownlint-rule-helpers';
+
 import type { Config, PKG, ScanOptions } from '../../types.js';
 import { MARKDOWN_LINT_FILE_EXT, MARKDOWN_LINT_IGNORE_PATTERN } from '../../utils/constants.js';
 import { resolveScanFiles } from '../resolve-files.js';

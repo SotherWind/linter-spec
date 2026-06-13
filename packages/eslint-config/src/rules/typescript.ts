@@ -1,5 +1,5 @@
-import tseslint from 'typescript-eslint';
 import type { Linter } from 'eslint';
+import tseslint from 'typescript-eslint';
 
 /**
  * TypeScript rules via the `typescript-eslint` umbrella package.

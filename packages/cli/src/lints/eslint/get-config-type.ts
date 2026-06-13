@@ -1,4 +1,5 @@
 import fg from 'fast-glob';
+
 import type { PKG } from '../../types.js';
 
 /**

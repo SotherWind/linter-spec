@@ -1,11 +1,13 @@
-import spawn from 'cross-spawn';
 import path from 'node:path';
-import fs from 'fs-extra';
+
+import spawn from 'cross-spawn';
 import fg from 'fast-glob';
-import { detectPackageManager, addDevCommand, installAllCommand } from '../../utils/npm.js';
+import fs from 'fs-extra';
+
+import { PKG_NAME } from '../../utils/constants.js';
 import log from '../../utils/log.js';
 import { messages } from '../../utils/messages.js';
-import { PKG_NAME } from '../../utils/constants.js';
+import { detectPackageManager, addDevCommand, installAllCommand } from '../../utils/npm.js';
 
 /** True when the project carries its own lint config files. */
 export function hasLocalLintConfig(cwd: string): boolean {

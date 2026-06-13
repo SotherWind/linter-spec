@@ -1,9 +1,10 @@
 import { execa } from 'execa';
 import ora from 'ora';
-import log from '../utils/log.js';
-import { detectPackageManager, addGlobalCommand } from '../utils/npm.js';
-import { messages } from '../utils/messages.js';
+
 import { PKG_NAME, PKG_VERSION } from '../utils/constants.js';
+import log from '../utils/log.js';
+import { messages } from '../utils/messages.js';
+import { detectPackageManager, addGlobalCommand } from '../utils/npm.js';
 
 /** Return the latest published version if it is newer than the local one. */
 async function checkLatestVersion(): Promise<string | null> {

@@ -1,20 +1,22 @@
 import path from 'node:path';
+
 import fs from 'fs-extra';
-import update from '../update.js';
-import log from '../../utils/log.js';
-import conflictResolve from '../../utils/conflict-resolve.js';
-import generateTemplate from '../../utils/generate-template.js';
-import { CLI_NAME, PROJECT_TYPES } from '../../utils/constants.js';
-import { messages } from '../../utils/messages.js';
+
+import { installProjectDeps } from './install-deps.js';
 import {
   chooseEnableMarkdownlint,
   chooseEnablePrettier,
   chooseEnableStylelint,
   chooseEslintType,
 } from './prompts.js';
-import { installProjectDeps } from './install-deps.js';
 import { setupHusky } from './setup-husky.js';
 import type { InitOptions, PKG } from '../../types.js';
+import conflictResolve from '../../utils/conflict-resolve.js';
+import { CLI_NAME, PROJECT_TYPES } from '../../utils/constants.js';
+import generateTemplate from '../../utils/generate-template.js';
+import log from '../../utils/log.js';
+import { messages } from '../../utils/messages.js';
+import update from '../update.js';
 
 interface InitConfig {
   enableESLint: boolean;

@@ -1,5 +1,6 @@
-import { describe, it, expect } from 'vitest';
 import markdownlint from 'markdownlint';
+import { describe, it, expect } from 'vitest';
+
 import config from '../src/index';
 
 function lint(strings: Record<string, string>) {

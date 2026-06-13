@@ -1,9 +1,11 @@
 import path from 'node:path';
+
 import { ESLint } from 'eslint';
-import type { Config, PKG, ScanOptions } from '../../types.js';
-import { ESLINT_FILE_EXT } from '../../utils/constants.js';
+
 import { formatESLintResults } from './format-results.js';
 import { getESLintConfig } from './get-config.js';
+import type { Config, PKG, ScanOptions } from '../../types.js';
+import { ESLINT_FILE_EXT } from '../../utils/constants.js';
 
 export interface DoESLintOptions extends ScanOptions {
   pkg: PKG;

@@ -1,5 +1,5 @@
-import importX from 'eslint-plugin-import-x';
 import type { ESLint, Linter } from 'eslint';
+import importX from 'eslint-plugin-import-x';
 
 /**
  * Module/import rules via eslint-plugin-import-x (the community fork of

@@ -1,5 +1,5 @@
-import n from 'eslint-plugin-n';
 import type { Linter } from 'eslint';
+import n from 'eslint-plugin-n';
 
 /**
  * Node.js rules via eslint-plugin-n (community-maintained fork of

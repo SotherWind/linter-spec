@@ -1,7 +1,9 @@
-import { describe, it, expect } from 'vitest';
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import stylelint from 'stylelint';
+import { describe, it, expect } from 'vitest';
+
 import config from '../src/index';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));

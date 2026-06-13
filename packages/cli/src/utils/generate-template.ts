@@ -1,8 +1,10 @@
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import fs from 'fs-extra';
-import fg from 'fast-glob';
+import { fileURLToPath } from 'node:url';
+
 import ejs from 'ejs';
+import fg from 'fast-glob';
+import fs from 'fs-extra';
+
 import {
   ESLINT_IGNORE_GLOBS,
   STYLELINT_FILE_EXT,

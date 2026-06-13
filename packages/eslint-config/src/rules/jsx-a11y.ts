@@ -1,5 +1,5 @@
-import jsxA11y from 'eslint-plugin-jsx-a11y';
 import type { ESLint, Linter } from 'eslint';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 /**
  * JSX a11y rules via eslint-plugin-jsx-a11y (v6.10+ supports flat config).

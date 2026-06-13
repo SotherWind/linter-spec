@@ -1,14 +1,13 @@
 import { describe, it, expect } from 'vitest';
 
-import essential from '../src/configs/essential/index.js';
+import { runLint } from './helpers/run-lint.js';
 import essentialEs5 from '../src/configs/essential/es5.js';
+import essential from '../src/configs/essential/index.js';
 import essentialReact from '../src/configs/essential/react.js';
-import essentialVue from '../src/configs/essential/vue.js';
 import essentialTs from '../src/configs/essential/typescript/index.js';
 import essentialTsReact from '../src/configs/essential/typescript/react.js';
 import essentialTsVue from '../src/configs/essential/typescript/vue.js';
-
-import { runLint } from './helpers/run-lint.js';
+import essentialVue from '../src/configs/essential/vue.js';
 
 describe('@linter-spec/eslint-config/essential family', () => {
   const allEntries = [

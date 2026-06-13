@@ -1,6 +1,8 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+
 import fs from 'fs-extra';
+
 import { CLI_NAME } from './constants.js';
 import type { Config } from '../types.js';
 

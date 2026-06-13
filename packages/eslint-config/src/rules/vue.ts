@@ -1,5 +1,5 @@
-import vue from 'eslint-plugin-vue';
 import type { Linter } from 'eslint';
+import vue from 'eslint-plugin-vue';
 
 /**
  * Vue 3 rules via eslint-plugin-vue@9's flat-config preset.

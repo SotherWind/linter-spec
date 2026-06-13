@@ -1,6 +1,8 @@
+import { createRequire } from 'node:module';
+
 import type { Command } from 'commander';
 import spawn from 'cross-spawn';
-import { createRequire } from 'node:module';
+
 import { messages } from '../utils/messages.js';
 
 const require = createRequire(import.meta.url);

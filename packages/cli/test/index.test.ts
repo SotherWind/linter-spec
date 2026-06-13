@@ -1,8 +1,10 @@
-import { fileURLToPath } from 'node:url';
 import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import fs from 'fs-extra';
 import { afterEach, beforeEach, describe, expect, test } from 'vitest';
+
 // Import the built ESM bundle, not src, so `import.meta.resolve` (used in
 // src/lints/stylelint/get-config.ts) reaches Node's real implementation
 // instead of vitest 2.x's Vite-SSR transform — which rewrites `import.meta`

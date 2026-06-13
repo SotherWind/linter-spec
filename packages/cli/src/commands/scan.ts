@@ -1,9 +1,10 @@
 import type { Command } from 'commander';
 import ora from 'ora';
-import scan from '../actions/scan/index.js';
-import printReport from '../utils/print-report.js';
+
 import { hasLocalLintConfig, installProjectDepsIfMissing } from '../actions/init/install-deps.js';
+import scan from '../actions/scan/index.js';
 import { messages } from '../utils/messages.js';
+import printReport from '../utils/print-report.js';
 
 interface ScanCmd {
   quiet?: boolean;

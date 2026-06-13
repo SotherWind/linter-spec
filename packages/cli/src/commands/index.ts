@@ -1,10 +1,11 @@
 import type { Command } from 'commander';
+
+import { registerCommitFileScan } from './commit-file-scan.js';
+import { registerCommitMsgScan } from './commit-msg-scan.js';
+import { registerFix } from './fix.js';
 import { registerInit } from './init.js';
 import { registerScan } from './scan.js';
-import { registerFix } from './fix.js';
 import { registerUpdate } from './update.js';
-import { registerCommitMsgScan } from './commit-msg-scan.js';
-import { registerCommitFileScan } from './commit-file-scan.js';
 
 /** Register every CLI command on the commander program. */
 export function registerCommands(program: Command, cwd: string): void {

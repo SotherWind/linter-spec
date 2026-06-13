@@ -1,8 +1,7 @@
 import type { Linter } from 'eslint';
 
-import vueRules from '../rules/vue.js';
-
 import base from './base.js';
+import vueRules from '../rules/vue.js';
 
 /**
  * Vue 3 preset = base + vue (incl. vue-eslint-parser handling).

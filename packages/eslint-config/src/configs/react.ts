@@ -1,9 +1,8 @@
 import type { Linter } from 'eslint';
 
-import reactRules from '../rules/react.js';
-import jsxA11yRules from '../rules/jsx-a11y.js';
-
 import base from './base.js';
+import jsxA11yRules from '../rules/jsx-a11y.js';
+import reactRules from '../rules/react.js';
 
 /**
  * React preset = base + react + jsx-a11y.

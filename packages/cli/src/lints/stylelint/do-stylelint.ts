@@ -1,4 +1,5 @@
 import stylelint from 'stylelint';
+
 import type { Config, PKG, ScanOptions } from '../../types.js';
 import { STYLELINT_FILE_EXT, STYLELINT_IGNORE_PATTERN } from '../../utils/constants.js';
 import { resolveScanFiles } from '../resolve-files.js';

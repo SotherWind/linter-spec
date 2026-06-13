@@ -1,11 +1,12 @@
 import type { Command } from 'commander';
 import ora from 'ora';
-import scan from '../actions/scan/index.js';
-import printReport from '../utils/print-report.js';
-import log from '../utils/log.js';
-import { getAmendFiles, getCommitFiles } from '../utils/git.js';
+
 import { hasLocalLintConfig, installProjectDepsIfMissing } from '../actions/init/install-deps.js';
+import scan from '../actions/scan/index.js';
+import { getAmendFiles, getCommitFiles } from '../utils/git.js';
+import log from '../utils/log.js';
 import { messages } from '../utils/messages.js';
+import printReport from '../utils/print-report.js';
 
 interface CommitFileScanCmd {
   strict?: boolean;

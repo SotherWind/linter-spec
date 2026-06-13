@@ -1,7 +1,6 @@
 import type { Linter } from 'eslint';
 
 import tsRules from '../../rules/typescript.js';
-
 import base from '../base.js';
 
 /**
