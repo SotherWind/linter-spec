@@ -29,11 +29,6 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      # `release` (build + changeset publish) needs npm auth; write it to the
-      # runner's user-level .npmrc so it never touches the committed one.
-      - name: Authenticate to npm
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
       - name: Create release PR or publish to npm
         uses: changesets/action@v1
         with:
@@ -43,4 +38,9 @@ jobs:
           title: 'chore(release): version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # changesets/action does token-based npm auth ONLY when NPM_TOKEN is in
+          # its own env. Writing the token to ~/.npmrc in a separate step is not
+          # enough — without this var the action silently falls back to OIDC
+          # trusted publishing (not configured here) and every publish 404s.
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
