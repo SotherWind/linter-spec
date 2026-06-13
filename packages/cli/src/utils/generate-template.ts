@@ -52,6 +52,13 @@ const mergeVSCodeConfig = (filepath: string, content: string): string => {
 };
 
 /**
+ * Files we will never silently overwrite — user customisations would be lost.
+ * The conflict-resolve step already prompts before regenerating known lint
+ * configs; these are extra files we only seed on a clean project.
+ */
+export const SKIP_IF_EXISTS = new Set(['tsconfig.json']);
+
+/**
  * Render the EJS config templates into `cwd`.
  * @param cwd  target project root
  * @param data template variables (the resolved `Config` plus `eslintType`)
@@ -66,7 +73,11 @@ export default function generateTemplate(
   const templates = fg.sync(`${vscode ? '_vscode' : '**'}/*.ejs`, { cwd: templatePath, dot: true });
 
   for (const name of templates) {
-    const filepath = path.resolve(cwd, name.replace(/\.ejs$/, '').replace(/^_/, '.'));
+    const outName = name.replace(/\.ejs$/, '').replace(/^_/, '.');
+    const filepath = path.resolve(cwd, outName);
+
+    if (SKIP_IF_EXISTS.has(path.basename(outName)) && fs.existsSync(filepath)) continue;
+
     let content = ejs.render(fs.readFileSync(path.resolve(templatePath, name), 'utf8'), {
       eslintIgnores: ESLINT_IGNORE_GLOBS,
       stylelintExt: STYLELINT_FILE_EXT,

@@ -49,15 +49,16 @@ export function detectPackageManager(cwd: string = process.cwd()): PackageManage
   return 'npm';
 }
 
-/** `[command, args]` to add a dev dependency, per package manager. */
-export function addDevCommand(pm: PackageManager, pkg: string): [string, string[]] {
+/** `[command, args]` to add one or more dev dependencies, per package manager. */
+export function addDevCommand(pm: PackageManager, pkg: string | string[]): [string, string[]] {
+  const list = Array.isArray(pkg) ? pkg : [pkg];
   switch (pm) {
     case 'yarn':
-      return ['yarn', ['add', '-D', pkg]];
+      return ['yarn', ['add', '-D', ...list]];
     case 'bun':
-      return ['bun', ['add', '-d', pkg]];
+      return ['bun', ['add', '-d', ...list]];
     default: // npm / pnpm / cnpm
-      return [pm, ['i', '-D', pkg]];
+      return [pm, ['i', '-D', ...list]];
   }
 }
 

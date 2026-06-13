@@ -6,6 +6,7 @@ import { confirm } from '@inquirer/prompts';
 import log from './log.js';
 import { messages } from './messages.js';
 import { CliAbortError } from './errors.js';
+import { SKIP_IF_EXISTS } from './generate-template.js';
 import type { PKG } from '../types.js';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -65,6 +66,7 @@ const checkReWriteConfig = (cwd: string): string[] =>
   fg
     .sync('**/*.ejs', { cwd: path.resolve(dirname, '../config'), dot: true })
     .map((name) => name.replace(/^_/, '.').replace(/\.ejs$/, ''))
+    .filter((filename) => !SKIP_IF_EXISTS.has(path.basename(filename)))
     .filter((filename) => fs.existsSync(path.resolve(cwd, filename)));
 
 export default async function conflictResolve(cwd: string, rewriteConfig?: boolean): Promise<PKG> {

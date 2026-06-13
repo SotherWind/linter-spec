@@ -1,0 +1,30 @@
+<%_
+// Only emit a tsconfig for TypeScript project types. The init flow skips
+// templates that render to an empty string.
+if (!eslintType.startsWith('typescript')) { return ''; }
+
+const isReact = eslintType === 'typescript/react';
+const isVue   = eslintType === 'typescript/vue';
+const isNode  = eslintType === 'typescript/node';
+// Node-only projects don't need DOM types; everything else (plain TS, React, Vue) does.
+const lib = isNode ? ['ES2022'] : ['ES2022', 'DOM', 'DOM.Iterable'];
+_%>
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": [<%- lib.map((l) => `"${l}"`).join(', ') %>],<% if (isReact) { %>
+    "jsx": "react-jsx",<% } %><% if (isVue) { %>
+    "jsx": "preserve",<% } %>
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*"<% if (isReact) { %>, "src/**/*.tsx"<% } %><% if (isVue) { %>, "src/**/*.vue"<% } %>],
+  "exclude": ["node_modules", "dist", "build", "coverage"]
+}

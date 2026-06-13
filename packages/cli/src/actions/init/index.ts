@@ -12,7 +12,7 @@ import {
   chooseEnableStylelint,
   chooseEslintType,
 } from './prompts.js';
-import { installCliDep } from './install-deps.js';
+import { installProjectDeps } from './install-deps.js';
 import { setupHusky } from './setup-husky.js';
 import type { InitOptions, PKG } from '../../types.js';
 
@@ -74,7 +74,7 @@ export default async function init(options: InitOptions): Promise<void> {
 
     if (!disableNpmInstall) {
       log.info(messages.stepInstall(++step));
-      await installCliDep(cwd);
+      await installProjectDeps(cwd, config);
       log.success(messages.stepInstallDone(step));
     }
   }
