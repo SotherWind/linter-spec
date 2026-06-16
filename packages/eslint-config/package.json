@@ -66,7 +66,7 @@
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-vue": "^9.28.0",
-    "typescript": "^5.6.2",
+    "typescript": "^6.0.0",
     "typescript-eslint": "^8.8.1",
     "vue-eslint-parser": "^9.4.3"
   },
@@ -105,7 +105,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-vue": "^9.28.0",
     "rimraf": "^6.0.1",
-    "typescript": "^5.6.2",
+    "typescript": "^6.0.2",
     "typescript-eslint": "^8.8.1",
     "vitest": "^2.1.1",
     "vue-eslint-parser": "^9.4.3"

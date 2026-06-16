@@ -42,7 +42,7 @@ export interface ProjectDepsConfig {
  */
 const PINNED_VERSIONS: Readonly<Record<string, string>> = {
   eslint: '^9.0.0',
-  typescript: '^5.6.2',
+  typescript: '^6.0.2',
   'typescript-eslint': '^8.8.1',
   'eslint-plugin-react': '^7.37.1',
   'eslint-plugin-react-hooks': '^5.0.0',
@@ -50,6 +50,7 @@ const PINNED_VERSIONS: Readonly<Record<string, string>> = {
   'eslint-plugin-vue': '^9.28.0',
   'vue-eslint-parser': '^9.4.3',
   'eslint-plugin-n': '^17.10.3',
+  husky: '^9.0.0',
 };
 
 function pin(name: string): string {
@@ -65,7 +66,7 @@ function pin(name: string): string {
  * transitively just by adding `@linter-spec/cli`.
  */
 export function projectDepsToInstall(config: ProjectDepsConfig): string[] {
-  const deps = new Set<string>([PKG_NAME]);
+  const deps = new Set<string>([PKG_NAME, 'husky']);
 
   if (config.enableESLint) {
     deps.add('eslint');

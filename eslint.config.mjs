@@ -34,6 +34,14 @@ export default [
     },
   },
   {
+    // The CLI's job is to print to stdout/stderr — `console` is the correct
+    // tool, not a debug leftover. log.ts is itself a thin wrapper over console.
+    files: ['packages/cli/src/**/*.ts'],
+    rules: {
+      'no-console': 'off',
+    },
+  },
+  {
     // Root tooling configs (.markdownlint-cli2.cjs, .prettierrc.cjs, commitlint.config.cjs)
     // are genuinely CommonJS — the package is type:module, so a .cjs extension is the
     // only way these `require()`/`module.exports` files load.

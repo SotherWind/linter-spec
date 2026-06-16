@@ -9,7 +9,7 @@ if (enableStylelint) {
   settings['stylelint.validate'] = stylelintExt.map((ext) => ext.replace(/^\./, ''));
 }
 settings['editor.codeActionsOnSave'] = {
-  'source.fixAll.eslint': 'explicit',
+  'source.fixAll.eslint': 'never',
   ...(enableStylelint ? { 'source.fixAll.stylelint': 'explicit' } : {}),
   ...(enableMarkdownlint ? { 'source.fixAll.markdownlint': 'explicit' } : {}),
 };

@@ -53,22 +53,24 @@ export default function printReport(results: ScanResult[], fix: boolean): void {
 
   const total = errorCount + warningCount;
 
-  if (fix) output += chalk.green('代码规范问题自动修复完成，请通过 git diff 确认修复效果 :D\n');
+  if (fix) output += chalk.green('Auto-fix complete. Run `git diff` to review the changes :D\n');
   if (fix && total > 0) {
-    output += chalk.green('ps. 以上显示的是无法被自动修复的问题，需要手动进行修复\n');
+    output += chalk.green(
+      'Note: the issues above could not be auto-fixed and need manual attention\n',
+    );
   }
 
   if (!fix && total > 0) {
     output += chalk[summaryColor].bold(
-      `${UNICODE.failure} 共 ${total} 个问题（${errorCount} 个错误，${warningCount} 个警告）\n`,
+      `${UNICODE.failure} ${total} issue(s) found (${errorCount} error(s), ${warningCount} warning(s))\n`,
     );
     if (fixableErrorCount > 0 || fixableWarningCount > 0) {
       output += chalk[summaryColor].bold(
-        `  其中 ${fixableErrorCount} 个错误、${fixableWarningCount} 个警告可通过 \`${CLI_NAME} fix\` 自动修复`,
+        `  ${fixableErrorCount} error(s) / ${fixableWarningCount} warning(s) fixable via \`${CLI_NAME} fix\``,
       );
     }
   }
-  if (!fix && total === 0) output = chalk.green.bold(`${UNICODE.success} 没有发现问题`);
+  if (!fix && total === 0) output = chalk.green.bold(`${UNICODE.success} No issues found`);
 
   console.log(chalk.reset(output));
 }

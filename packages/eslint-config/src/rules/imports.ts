@@ -1,5 +1,5 @@
 import type { ESLint, Linter } from 'eslint';
-import importX from 'eslint-plugin-import-x';
+import importXPlugin from 'eslint-plugin-import-x';
 
 /**
  * Module/import rules via eslint-plugin-import-x (the community fork of
@@ -8,7 +8,7 @@ import importX from 'eslint-plugin-import-x';
 const imports: Linter.Config = {
   name: '@linter-spec/imports',
   plugins: {
-    'import-x': importX as unknown as ESLint.Plugin,
+    'import-x': importXPlugin as unknown as ESLint.Plugin,
   },
   rules: {
     'import-x/no-unresolved': 'off',
