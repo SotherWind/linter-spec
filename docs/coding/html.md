@@ -1,4 +1,3 @@
-
 # HTML 编码规范
 
 ## 1. 文档
@@ -27,7 +26,7 @@
 
     > 推荐开发者在 `html` 元素上指定 `lang` 属性，以指出文档的语言。这有助于读屏、翻译等工具的工作。
 
-    `lang` 属性的值由 `language-subtags` 组成，在 [BCP47](http://www.ietf.org/rfc/bcp/bcp47.txt#) 中定义，[了解更多](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/lang)。
+    `lang` 属性的值由 `language-subtags` 组成，在 [BCP47](https://www.ietf.org/rfc/bcp/bcp47.txt) 中定义，[了解更多](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/lang)。
 
     ```html
     <html lang="zh-CN">
@@ -84,7 +83,7 @@
 
     在 `<body></body>` 中指定外部样式表和嵌入式样式块可能会导致页面的重排和重绘，对页面的渲染造成影响。因此，一般情况下，CSS 应在 `<head></head>` 标签里引入，[了解更多](https://developer.yahoo.com/performance/rules.html#css_top)。
 
-    > 在 `HTTP2`（Chrome 浏览器 69 版本之后，`Firefox` 和 `Edge`）中可以在 `body` 中使用 `link` 标签引入样式文件，但不推荐在 `body` 中使用 `<style>` 标签的内联样式。\*\*`<link rel="stylesheet">`。
+    > 在 `HTTP2`（Chrome 浏览器 69 版本之后，`Firefox` 和 `Edge`）中可以在 `body` 中使用 `link` 标签引入样式文件，但不推荐在 `body` 中使用 `<style>` 标签的内联样式，而应使用 `<link rel="stylesheet">` 引入。
 
     除了基础库等必须要在 DOM 加载之前运行的 JavaScript 脚本，其他都在靠近 `body` 结束标签前引入，以防止出现页面渲染的阻塞，[了解更多](https://developer.yahoo.com/performance/rules.html#js_bottom)。
 

@@ -1,4 +1,3 @@
-
 # Node 编码规范
 
 :::tip
@@ -135,7 +134,7 @@ import note from 'note';
 import Car from './models/car';
 ```
 
-- 1.4.【推荐】抛出异常时，使用原生 `Error` 对象。`eslint`: [no-throw-literal](https://eslint.org/docs/rules/no-throw-literal)
+- 1.4.【推荐】抛出异常时，使用原生 `Error` 对象。`eslint`: [no-throw-literal](https://eslint.org/docs/latest/rules/no-throw-literal)
 
 ```javascript
 // bad
@@ -168,7 +167,7 @@ try {
 }
 ```
 
-1.5.【推荐】线上环境尽量不要使用 `fs/child_process` 模块的 `sync` 方法，如 `fs.readFileSync()`、`cp.execSync()` 等。
+- 1.5.【推荐】线上环境尽量不要使用 `fs/child_process` 模块的 `sync` 方法，如 `fs.readFileSync()`、`cp.execSync()` 等。
 
 这样会阻塞 `Node.js` 应用的进程，导致不能继续处理新的请求，或当前正在处理的请求超时。推荐使用 `require('fs').promises` 方式或使用 [mz](https://www.npmjs.com/package/mz)。
 
@@ -290,6 +289,6 @@ luke.jump()
 
 ## 参考资料
 
-- [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
+- [eslint-plugin-security](https://github.com/eslint-community/eslint-plugin-security)
 - [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)
 - [airbnb JavaScript style](https://github.com/airbnb/javascript)

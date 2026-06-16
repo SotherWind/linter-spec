@@ -1,7 +1,10 @@
-
 # CSS 编码规范
 
 本规约涉及 `CSS` 及其预编译语言（`Sass`、`Less`）的编码风格和最佳实践，部分规则可通过 [stylelint](https://stylelint.io/) 工具落地。
+
+::: tip 关于格式化规则
+Stylelint 16 起已将缩进、空格、大小写等**风格类规则从核心移除**，它们现由社区维护的 [`@stylistic/stylelint-plugin`](https://github.com/stylelint-stylistic/stylelint-stylistic) 提供。`@linter-spec/stylelint-config` 已内置该插件，本文中链接到该仓库的规则即属此类。
+:::
 
 ## 1. CSS
 
@@ -11,7 +14,7 @@
 
 详细规则如下：
 
-- 1.1.1.【强制】所有声明都应该以分号结尾，不能省略。`stylelint`: [declaration-block-trailing-semicolon](https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon)
+- 1.1.1.【强制】所有声明都应该以分号结尾，不能省略。`stylelint`: [declaration-block-trailing-semicolon](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-trailing-semicolon/README.md)
 
   虽然 `CSS` 语法中最后一条声明的分号是可选的，但是使用分号可以增加代码的一致性和易用性。
 
@@ -29,7 +32,7 @@
   }
   ```
 
-- 1.1.2.【推荐】使用 2 个空格缩进，不要使用 4 个空格或 tab 缩进。`stylelint`: [indentation](https://stylelint.io/user-guide/rules/indentation)
+- 1.1.2.【推荐】使用 2 个空格缩进，不要使用 4 个空格或 tab 缩进。`stylelint`: [indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md)
 
   ```css
   /* bad */
@@ -43,7 +46,7 @@
   }
   ```
 
-- 1.1.3.【推荐】选择器和 `{` 之间保留一个空格。`stylelint`: [block-opening-brace-space-before](https://stylelint.io/user-guide/rules/block-opening-brace-space-before)
+- 1.1.3.【推荐】选择器和 `{` 之间保留一个空格。`stylelint`: [block-opening-brace-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-before/README.md)
 
   ```css
   /* bad */
@@ -57,7 +60,7 @@
   }
   ```
 
-- 1.1.4.【推荐】属性名和 `:` 之前无空格，`:` 和属性值之间保留一个空格。`stylelint`: [declaration-colon-space-after](https://stylelint.io/user-guide/rules/declaration-colon-space-after) [declaration-colon-space-before](https://stylelint.io/user-guide/rules/declaration-colon-space-before)
+- 1.1.4.【推荐】属性名和 `:` 之前无空格，`:` 和属性值之间保留一个空格。`stylelint`: [declaration-colon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-after/README.md) [declaration-colon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-before/README.md)
 
   ```css
   /* bad */
@@ -73,7 +76,7 @@
   }
   ```
 
-- 1.1.5.【推荐】`>`、`+`、`~` 、`||` 等组合器前后各保留一个空格。`stylelint`: [selector-combinator-space-before](https://stylelint.io/user-guide/rules/selector-combinator-space-before) [selector-combinator-space-after](https://stylelint.io/user-guide/rules/selector-combinator-space-after)
+- 1.1.5.【推荐】`>`、`+`、`~` 、`||` 等组合器前后各保留一个空格。`stylelint`: [selector-combinator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md) [selector-combinator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md)
 
   ```css
   /* bad */
@@ -93,7 +96,7 @@
   }
   ```
 
-- 1.1.6.【推荐】在使用 `,` 分隔的属性值中，`,` 之后保留一个空格。`stylelint`: [value-list-comma-space-after](https://stylelint.io/user-guide/rules/value-list-comma-space-after)
+- 1.1.6.【推荐】在使用 `,` 分隔的属性值中，`,` 之后保留一个空格。`stylelint`: [value-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md)
 
   ```css
   /* bad */
@@ -160,7 +163,7 @@
   }
   ```
 
-- 1.1.10.【推荐】单行代码最多不要超过 100 个字符。 `stylelint`: [max-line-length](https://stylelint.io/user-guide/rules/max-line-length) 除了以下两种情况：
+- 1.1.10.【推荐】单行代码最多不要超过 100 个字符。 `stylelint`: [max-line-length](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-line-length/README.md) 除了以下两种情况：
 
   - 使用 [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url) 函数时
   - CSS 属性值本身无法换行时，即属性值内无空格或逗号时
@@ -179,7 +182,7 @@
   );
   ```
 
-- 1.1.11.【参考】使用多个选择器时，每个选择器应该单独成行。`stylelint`: [selector-list-comma-newline-after](https://stylelint.io/user-guide/rules/selector-list-comma-newline-after)
+- 1.1.11.【参考】使用多个选择器时，每个选择器应该单独成行。`stylelint`: [selector-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md)
 
   ```css
   /* bad */
@@ -255,7 +258,7 @@
   }
   ```
 
-- 1.2.2.【参考】属性选择器的值始终用双引号包裹。`stylelint`: [selector-attribute-quotes](https://stylelint.io/user-guide/rules/selector-attribute-quotes)
+- 1.2.2.【参考】属性选择器的值始终用双引号包裹。`stylelint`: [selector-attribute-quotes](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-quotes/README.md)
 
   属性选择器的值的引号只有在[某些情况下](https://mathiasbynens.be/notes/unquoted-attribute-values#css)可以省略。
 
@@ -307,7 +310,7 @@
 
 - 1.3.2.【推荐】不要使用 `!important` 重写样式。
 
-- 1.3.3.【推荐】十六进制值统一使用小写字母（小写字母更容易分辨）。`stylelint`: [color-hex-case](https://stylelint.io/user-guide/rules/color-hex-case)
+- 1.3.3.【推荐】十六进制值统一使用小写字母（小写字母更容易分辨）。`stylelint`: [color-hex-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/color-hex-case/README.md)
 
   ```css
   /* bad */
@@ -339,7 +342,7 @@
   }
   ```
 
-- 1.3.5.【参考】保留小数点前的 0。`stylelint`: [number-leading-zero](https://stylelint.io/user-guide/rules/number-leading-zero)
+- 1.3.5.【参考】保留小数点前的 0。`stylelint`: [number-leading-zero](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md)
 
   在 CSS 中，大于 -1 小于 1 的小数，小数点前的 0 可以省略：
 
@@ -469,7 +472,7 @@
 
   与 `<link>` 相比，`@import` 会在关键渲染路径上增加更多的往返（即关键路径的深度变长），这样会导致浏览器处理 CSS 文件速度变慢，因此我们应该避免使用 `@import`。
 
-  ```css
+  ```html
   <!-- bad -->
   <style>
     @import url("more.css");

@@ -1,4 +1,3 @@
-
 # JavaScript 编码规范
 
 :::tip
@@ -7,13 +6,13 @@
 
 ## 1. 编码风格
 
-![JavaScript style](./img//JavaScript.svg)
+![JavaScript style](./img/JavaScript.svg)
 
 详细规则如下：
 
 ### 1.1. 缩进
 
-- 1.1.1.【强制】使用 2 个空格缩进。`eslint`: [indent](https://eslint.org/docs/rules/indent)
+- 1.1.1.【强制】使用 2 个空格缩进。`eslint`: [indent](https://eslint.style/rules/indent)
 
   统一使用 2 个空格缩进，不要使用 4 个空格或 tab 缩进：
 
@@ -31,7 +30,7 @@
 
 ### 1.2. 分号
 
-- 1.2.1.【强制】使用分号。`eslint`: [semi](https://eslint.org/docs/rules/semi)
+- 1.2.1.【强制】使用分号。`eslint`: [semi](https://eslint.style/rules/semi)
 
   统一以分号结束语句，可以避免 JS 引擎自动分号插入机制的怪异行为，在语义上也更加明确。
 
@@ -76,7 +75,7 @@
 
 ### 1.3. 逗号
 
-- 1.3.1.【强制】对于逗号分隔的多行结构，不使用行首逗号。`eslint`: [comma-style](https://eslint.org/docs/rules/comma-style)
+- 1.3.1.【强制】对于逗号分隔的多行结构，不使用行首逗号。`eslint`: [comma-style](https://eslint.style/rules/comma-style)
 
   ```javascript
   // bad
@@ -108,7 +107,7 @@
   };
   ```
 
-- 1.3.2.【强制】对于逗号分隔的多行结构，始终加上最后一个逗号。`eslint`: [comma-dangle](https://eslint.org/docs/rules/comma-dangle)
+- 1.3.2.【强制】对于逗号分隔的多行结构，始终加上最后一个逗号。`eslint`: [comma-dangle](https://eslint.style/rules/comma-dangle)
 
   这样可以使增删行更加容易，也会使 `git diffs` 更清晰。`Babel` 等编译器会在编译后的代码里帮我们去掉最后额外的逗号，因此不必担心在旧浏览器中的问题。
 
@@ -195,7 +194,7 @@
 
 > 术语解释：**块（block）** 可以理解为类、函数、控制语句等由大括号 `{}` 分隔的代码块状结构，由一对大括号界定，用于组合若干条语句 [了解更多](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)
 
-- 1.4.1【推荐】始终使用大括号包裹代码块。eslint: [curly](https://eslint.org/docs/rules/curly) [nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)
+- 1.4.1【推荐】始终使用大括号包裹代码块。eslint: [curly](https://eslint.org/docs/latest/rules/curly) [nonblock-statement-body-position](https://eslint.style/rules/nonblock-statement-body-position)
 
   多行代码块必须用大括号包裹：
 
@@ -230,7 +229,7 @@
 
 #### 1.4.2. 大括号换行风格
 
-- 1.4.2.1.【强制】对于非空代码块，采用 `Egyptian Brackets` 风格。eslint: [brace-style](https://eslint.org/docs/rules/brace-style)
+- 1.4.2.1.【强制】对于非空代码块，采用 `Egyptian Brackets` 风格。eslint: [brace-style](https://eslint.style/rules/brace-style)
 
   对于非空的代码块，大括号的换行方式采用 [Egyptian Brackets](https://blog.codinghorror.com/new-programming-jargon/) 风格，具体规则如下：
 
@@ -296,7 +295,7 @@
   }
   ```
 
-- 1.4.3.【强制】不要使用空代码块。`eslint`: [no-empty](https://eslint.org/docs/rules/no-empty)
+- 1.4.3.【强制】不要使用空代码块。`eslint`: [no-empty](https://eslint.org/docs/latest/rules/no-empty)
 
   不要让代码中出现空代码块，这会使阅读者感到困惑。如果必须使用空块，需在块内写明注释。
 
@@ -319,7 +318,7 @@
 
 合理并一致地使用空格有助于提升代码的可读性和可维护性。具体来说，我们采用如下的空格风格：
 
-- 1.5.1.【强制】空格风格。`eslint`: [space-before-blocks](https://eslint.org/docs/rules/space-before-blocks) [keyword-spacing](https://eslint.org/docs/rules/keyword-spacing) [space-in-parens](https://eslint.org/docs/rules/space-in-parens) [array-bracket-spacing](https://eslint.org/docs/rules/array-bracket-spacing) [object-curly-spacing](https://eslint.org/docs/rules/object-curly-spacing) [space-infix-ops](https://eslint.org/docs/rules/space-infix-ops) [key-spacing](https://eslint.org/docs/rules/key-spacing)
+- 1.5.1.【强制】空格风格。`eslint`: [space-before-blocks](https://eslint.style/rules/space-before-blocks) [keyword-spacing](https://eslint.style/rules/keyword-spacing) [space-in-parens](https://eslint.style/rules/space-in-parens) [array-bracket-spacing](https://eslint.style/rules/array-bracket-spacing) [object-curly-spacing](https://eslint.style/rules/object-curly-spacing) [space-infix-ops](https://eslint.style/rules/space-infix-ops) [key-spacing](https://eslint.style/rules/key-spacing)
 
   块的左大括号 `{` 前有一个空格：
 
@@ -467,7 +466,7 @@
 
 ### 1.6. 空行
 
-- 1.6.1.【推荐】在文件末尾保留一行空行。`eslint`: [eol-last](https://eslint.org/docs/rules/eol-last)
+- 1.6.1.【推荐】在文件末尾保留一行空行。`eslint`: [eol-last](https://eslint.style/rules/eol-last)
 
   在非空文件中保留拖尾换行是一种常见的 `UNIX` 风格。它的好处同输出文件到终端一样，方便在串联和追加文件时不会打断 `shell` 的提示。
 
@@ -491,7 +490,7 @@
   export default foo;↵
   ```
 
-- 1.6.2.【强制】块的开始和结束不能是空行。`eslint`: [padded-blocks](https://eslint.org/docs/rules/padded-blocks)
+- 1.6.2.【强制】块的开始和结束不能是空行。`eslint`: [padded-blocks](https://eslint.style/rules/padded-blocks)
 
   ```javascript
   // bad
@@ -562,7 +561,7 @@
 
 ### 1.7. 最大字符数和最大行数
 
-- 1.7.1.【推荐】单行最大字符数：100。`eslint`: [max-len](https://eslint.org/docs/rules/max-len)
+- 1.7.1.【推荐】单行最大字符数：100。`eslint`: [max-len](https://eslint.style/rules/max-len)
 
   过长的单行代码不易阅读和维护，需要进行合理换行。
 
@@ -596,11 +595,11 @@
     .fail(() => console.log('You have failed this city.'));
   ```
 
-- 1.7.2.【参考】文件最大行数：1000。`eslint`: [max-lines](https://eslint.org/docs/rules/max-lines)
+- 1.7.2.【参考】文件最大行数：1000。`eslint`: [max-lines](https://eslint.org/docs/latest/rules/max-lines)
 
   过长的文件不易阅读和维护，最好对其进行拆分。
 
-- 1.7.3.【参考】函数最大行数：80。`eslint`: [max-lines-per-function](https://eslint.org/docs/rules/max-lines-per-function)
+- 1.7.3.【参考】函数最大行数：80。`eslint`: [max-lines-per-function](https://eslint.org/docs/latest/rules/max-lines-per-function)
 
   过长的函数不易阅读和维护，最好对其进行拆分。
 
@@ -608,7 +607,7 @@
 
 ### 2.1. 变量声明
 
-- 2.1.1.【强制】使用 `const` 或 `let` 声明变量。`eslint`: [no-var](https://eslint.org/docs/rules/no-var) [no-undef](https://eslint.org/docs/rules/no-undef)
+- 2.1.1.【强制】使用 `const` 或 `let` 声明变量。`eslint`: [no-var](https://eslint.org/docs/latest/rules/no-var) [no-undef](https://eslint.org/docs/latest/rules/no-undef)
 
   从 `ES6` 开始，可以使用 `let` 和 `const` 关键字在块级作用域下声明变量。块级作用域在很多其他编程语言中都有使用，这样声明的变量不会污染全局命名空间。
 
@@ -634,7 +633,7 @@
   const foo = 'foo';
   ```
 
-- 2.1.2.【强制】正确地使用 `const` 和 `let`。`eslint`: [prefer-const](https://eslint.org/docs/rules/prefer-const)
+- 2.1.2.【强制】正确地使用 `const` 和 `let`。`eslint`: [prefer-const](https://eslint.org/docs/latest/rules/prefer-const)
 
   声明变量时，应优先使用 `const`，只有当变量会被重新赋值时才使用 `let`：
 
@@ -668,7 +667,7 @@
   obj.name = 'bar';
   ```
 
-- 2.1.3.【强制】一条声明语句声明一个变量。`eslint`: [one-var](https://eslint.org/docs/rules/one-var)
+- 2.1.3.【强制】一条声明语句声明一个变量。`eslint`: [one-var](https://eslint.org/docs/latest/rules/one-var)
 
   这样做更易于追加新的声明语句（你不需要总去把最后的 `;` 改成 `,` 了），也更易于进行单步调试。
 
@@ -682,7 +681,7 @@
   const bar = 2;
   ```
 
-- 2.1.4.【强制】声明的变量必须被使用。`eslint`: [no-unused-vars](https://eslint.org/docs/rules/no-unused-vars)
+- 2.1.4.【强制】声明的变量必须被使用。`eslint`: [no-unused-vars](https://eslint.org/docs/latest/rules/no-unused-vars)
 
   声明而未使用的变量、表达式可能带来潜在的问题，也会给维护者造成困扰，应将它们删除。
 
@@ -716,7 +715,7 @@
   }
   ```
 
-- 2.1.5.【强制】不要在声明前就使用变量。`eslint`: [no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)
+- 2.1.5.【强制】不要在声明前就使用变量。`eslint`: [no-use-before-define](https://eslint.org/docs/latest/rules/no-use-before-define)
 
   在 `ES5` 中，由于 `var` 的声明提升作用，变量可以在声明前使用，但这样做可能给人带来疑惑和隐患，所以不要在声明前就使用变量：
 
@@ -780,7 +779,7 @@
   }
   ```
 
-- 2.1.7.【强制】变量不要与外层作用域已存在的变量同名。`eslint`: [no-shadow](https://eslint.org/docs/rules/no-shadow)
+- 2.1.7.【强制】变量不要与外层作用域已存在的变量同名。`eslint`: [no-shadow](https://eslint.org/docs/latest/rules/no-shadow)
 
   如果变量与外层已存在变量同名，会降低可读性，也会导致内层作用域无法读取外层作用域的同名变量。
 
@@ -801,7 +800,7 @@
   }
   ```
 
-- 2.1.8.【强制】不要重复声明变量和函数。`eslint`: [no-redeclare](https://eslint.org/docs/rules/no-redeclare)
+- 2.1.8.【强制】不要重复声明变量和函数。`eslint`: [no-redeclare](https://eslint.org/docs/latest/rules/no-redeclare)
 
   在 `ES5` 中，尽管使用 `var` 重复声明不会报错，但这样做会令人疑惑，降低程序的可维护性。同理，函数的声明也不要与已存在的变量和函数重名：
 
@@ -859,7 +858,7 @@
   myFunc('bar'); // => 'bar'
   ```
 
-- 2.1.9.【强制】禁止连续赋值。`eslint`: [no-multi-assign](https://eslint.org/docs/rules/no-multi-assign)
+- 2.1.9.【强制】禁止连续赋值。`eslint`: [no-multi-assign](https://eslint.org/docs/latest/rules/no-multi-assign)
 
   变量的连续赋值让人难以阅读和理解，并且可能导致意想不到的结果（如产生全局变量）。
 
@@ -909,9 +908,9 @@
 
 > `JS`的数据类型包括 7 种原始类型（primitive type），即 `Boolean`, `Null`, `Undefined`, `Number`, `String`, `Symbol` (ES6 新定义), `BigInt`（ES11新定义），以及 `Object` 类型，[了解更多](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)。这个章节主要介绍原始类型相关的规约。
 
-- 2.2.1.【强制】不要使用 `new Number/String/Boolean`。`eslint`: [no-new-wrappers](https://eslint.org/docs/rules/no-new-wrappers)
+- 2.2.1.【强制】不要使用 `new Number/String/Boolean`。`eslint`: [no-new-wrappers](https://eslint.org/docs/latest/rules/no-new-wrappers)
 
-  使用 · 声明不会有任何好处，还会导致变量成为 `object` 类型，可能引起 bug。
+  使用 `new Number/String/Boolean` 声明不会有任何好处，还会导致变量成为 `object` 类型，可能引起 bug。
 
   ```javascript
   // bad
@@ -981,7 +980,7 @@
     const hasAge = !!age;
     ```
 
-- 2.2.3.【推荐】使用 `parseInt()` 方法时总是带上基数。`eslint`: [radix](https://eslint.org/docs/rules/radix)
+- 2.2.3.【推荐】使用 `parseInt()` 方法时总是带上基数。`eslint`: [radix](https://eslint.org/docs/latest/rules/radix)
 
   `parseInt` 方法的第一个参数是待转换的字符串，第二个参数是转换基数。当第二个参数省略时，`parseInt` 会根据第一个参数自动判断基数：
 
@@ -1001,7 +1000,7 @@
   parseInt("071", 10); // => 71
   ```
 
-- 2.2.4.【强制】避免不必要的布尔类型转换。`eslint`: [no-extra-boolean-cast](https://eslint.org/docs/rules/no-extra-boolean-cast)
+- 2.2.4.【强制】避免不必要的布尔类型转换。`eslint`: [no-extra-boolean-cast](https://eslint.org/docs/latest/rules/no-extra-boolean-cast)
 
   在 `if` 等条件语句中，将表达式的结果强制转换成布尔值是多余的：
 
@@ -1031,7 +1030,7 @@
 
 #### 2.2.5. 字符串
 
-- 2.2.5.1.【强制】字符串优先使用单引号。`eslint`: [quotes](https://eslint.org/docs/rules/quotes)
+- 2.2.5.1.【强制】字符串优先使用单引号。`eslint`: [quotes](https://eslint.style/rules/quotes)
 
   ```javascript
   // bad
@@ -1042,7 +1041,7 @@
   const name = 'tod';
   ```
 
-- 2.2.5.2.【推荐】使用模板字符串替代字符串拼接。eslint: [prefer-template](https://eslint.org/docs/rules/prefer-template)
+- 2.2.5.2.【推荐】使用模板字符串替代字符串拼接。eslint: [prefer-template](https://eslint.org/docs/latest/rules/prefer-template)
 
   模板字符串让代码更简洁，可读性更强
 
@@ -1058,7 +1057,7 @@
   }
   ```
 
-- 2.2.5.3.【强制】禁止不必要的转义字符。[no-useless-escape](https://eslint.org/docs/rules/no-useless-escape)
+- 2.2.5.3.【强制】禁止不必要的转义字符。[no-useless-escape](https://eslint.org/docs/latest/rules/no-useless-escape)
 
   转义字符会大大降低代码的可读性，因此尽量不要滥用它们。
 
@@ -1073,7 +1072,7 @@
 
 ### 2.3. 数组
 
-- 2.3.1.【强制】使用字面量创建数组。`eslint`: [no-array-constructor](https://eslint.org/docs/rules/no-array-constructor)
+- 2.3.1.【强制】使用字面量创建数组。`eslint`: [no-array-constructor](https://eslint.org/docs/latest/rules/no-array-constructor)
 
   不要使用 `new Array()` 和 `Array()` 创建数组，除非为了构造某一长度的空数组。
 
@@ -1087,7 +1086,7 @@
   const b = new Array(500); // 构造长度为 500 的空数组
   ```
 
-- 2.3.2.【强制】某些数组方法的回调函数中必须包含 `return` 语句。`eslint`: [array-callback-return](https://eslint.org/docs/rules/array-callback-return)
+- 2.3.2.【强制】某些数组方法的回调函数中必须包含 `return` 语句。`eslint`: [array-callback-return](https://eslint.org/docs/latest/rules/array-callback-return)
 
   以下数组方法：`map`, `filter`, `from`, `every`, `find`, `findIndex`, `reduce`, `reduceRight`, `some`, `sort` 的回调函数中必须包含 `return` 语句，否则可能会产生误用或错误。
 
@@ -1226,7 +1225,7 @@
 
 ### 2.4. 对象
 
-- 2.4.1.【强制】使用字面量创建对象。`eslint`: [no-new-object](https://eslint.org/docs/rules/no-new-object)
+- 2.4.1.【强制】使用字面量创建对象。`eslint`: [no-new-object](https://eslint.org/docs/latest/rules/no-new-object)
 
   ```javascript
   // bad
@@ -1236,7 +1235,7 @@
   const obj = {};
   ```
 
-- 2.4.2【强制】使用对象属性和方法的简写语法。`eslint`: [object-shorthand](https://eslint.org/docs/rules/object-shorthand)
+- 2.4.2【强制】使用对象属性和方法的简写语法。`eslint`: [object-shorthand](https://eslint.org/docs/latest/rules/object-shorthand)
 
   `ES6` 提供了对象属性和方法的简写语法，可以使代码更加简洁：
 
@@ -1289,7 +1288,7 @@
   };
   ```
 
-- 2.4.4.【强制】对象的属性名不要用引号包裹，除非包含特殊字符。`eslint`: [quote-props](https://eslint.org/docs/rules/quote-props)
+- 2.4.4.【强制】对象的属性名不要用引号包裹，除非包含特殊字符。`eslint`: [quote-props](https://eslint.style/rules/quote-props)
 
   这样更加简洁，也有助于语法高亮和一些 `JS` 引擎的优化。
 
@@ -1311,7 +1310,7 @@
   };
   ```
 
-- 2.4.5.【强制】优先使用 . 访问对象的属性。`eslint`: [dot-notation](https://eslint.org/docs/rules/dot-notation)
+- 2.4.5.【强制】优先使用 . 访问对象的属性。`eslint`: [dot-notation](https://eslint.org/docs/latest/rules/dot-notation)
 
   这样可以提高代码可读性。`[]` 仅应在访问动态属性名或包含特殊字符的属性名时被使用。
 
@@ -1358,7 +1357,7 @@
   const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
   ```
 
-- 2.4.7.【推荐】使用解构获取对象属性。eslint: [prefer-destructuring](https://eslint.org/docs/rules/prefer-destructuring)
+- 2.4.7.【推荐】使用解构获取对象属性。eslint: [prefer-destructuring](https://eslint.org/docs/latest/rules/prefer-destructuring)
 
   获取对象的同名属性、多个属性时，使用解构让代码更简洁，也可以减少为了使用属性而创建的临时引用。
 
@@ -1407,7 +1406,7 @@
   };
   ```
 
-- 2.4.9.【强制】不要直接在对象上调用 `Object.prototypes` 上的方法。`eslint`: [no-prototype-builtins](https://eslint.org/docs/rules/no-prototype-builtins)
+- 2.4.9.【强制】不要直接在对象上调用 `Object.prototypes` 上的方法。`eslint`: [no-prototype-builtins](https://eslint.org/docs/latest/rules/no-prototype-builtins)
 
   不要直接在对象上调用 `Object.prototypes` 上的方法，例如 `hasOwnProperty`、`propertyIsEnumerable`、`isPrototypeOf`。
 
@@ -1431,7 +1430,7 @@
 
 ### 2.5. 函数
 
-- 2.5.1.【强制】不要用 Function 构造函数创建函数。`eslint`: [no-new-func](https://eslint.org/docs/rules/no-new-func)
+- 2.5.1.【强制】不要用 Function 构造函数创建函数。`eslint`: [no-new-func](https://eslint.org/docs/latest/rules/no-new-func)
 
   使用 `new Function` 创建函数会像 `eval()` 方法一样执行字符串，带来安全隐患
 
@@ -1443,7 +1442,7 @@
   const sum = (a, b) => (a + b);
   ```
 
-- 2.5.2.【强制】不要在块中使用函数声明。`eslint`: [no-inner-declarations](https://eslint.org/docs/rules/no-inner-declarations)
+- 2.5.2.【强制】不要在块中使用函数声明。`eslint`: [no-inner-declarations](https://eslint.org/docs/latest/rules/no-inner-declarations)
 
   在非函数块（如 `if`、`while` 等）中，不要使用函数声明：
 
@@ -1503,7 +1502,7 @@
   };
   ```
 
-- 2.5.4.【强制】使用箭头函数代替匿名函数。`eslint`: [prefer-arrow-callback](https://eslint.org/docs/rules/prefer-arrow-callback)
+- 2.5.4.【强制】使用箭头函数代替匿名函数。`eslint`: [prefer-arrow-callback](https://eslint.org/docs/latest/rules/prefer-arrow-callback)
 
   `ES6` 提供的箭头函数可以解决 `this` 指向的问题，而且语法更简洁。
 
@@ -1521,7 +1520,7 @@
   });
   ```
 
-- 2.5.5.【推荐】箭头函数编码风格。`eslint`: [arrow-parens](https://eslint.org/docs/rules/arrow-parens) [arrow-body-style](https://eslint.org/docs/rules/arrow-body-style)
+- 2.5.5.【推荐】箭头函数编码风格。`eslint`: [arrow-parens](https://eslint.style/rules/arrow-parens) [arrow-body-style](https://eslint.org/docs/latest/rules/arrow-body-style)
 
   箭头函数参数的小括号、函数体的大括号在某些时候可以省略，这可能导致风格的不统一，因此需要规范其编码风格：
 
@@ -1598,7 +1597,7 @@
     [1, 2, 3].map((x) => x * x);
     ```
 
-- 2.5.6.【强制】不要将函数参数命名为 `arguments。`
+- 2.5.6.【强制】不要将函数参数命名为 `arguments`。
 
   这会覆盖掉函数作用域中的 `arguments` 对象。
 
@@ -1614,7 +1613,7 @@
   }
   ```
 
-- 2.5.7.【强制】不要使用 `arguments` 对象。`eslint`: [prefer-REST-params](https://eslint.org/docs/rules/prefer-rest-params)
+- 2.5.7.【强制】不要使用 `arguments` 对象。`eslint`: [`prefer-rest-params`](https://eslint.org/docs/latest/rules/prefer-rest-params)
 
   不要使用 `arguments` 对象，使用剩余参数操作符 `...` 代替。
 
@@ -1674,7 +1673,7 @@
   const x = multiply(42); // => 42
   ```
 
-- 2.5.10.【推荐】不要修改函数参数。`eslint`: [no-param-reassign](https://eslint.org/docs/rules/no-param-reassign)
+- 2.5.10.【推荐】不要修改函数参数。`eslint`: [no-param-reassign](https://eslint.org/docs/latest/rules/no-param-reassign)
 
   不要修改引用类型的参数，这可能导致作为入参的原变量发生变化：
 
@@ -1712,7 +1711,7 @@
   }
   ```
 
-- 2.5.11.【强制】将立即执行函数表达式（`IIFE`）用小括号包裹。`eslint`: [wrap-iife](https://eslint.org/docs/rules/wrap-iife)
+- 2.5.11.【强制】将立即执行函数表达式（`IIFE`）用小括号包裹。`eslint`: [wrap-iife](https://eslint.org/docs/latest/rules/wrap-iife)
 
   `IIFE` 是一个独立的执行单元，将它用小括号包裹可以更清晰的体现这点。需要提醒的是，由于 `ES6` 模块语法的引入，你可能不再需要使用 `IIFE` 了。
 
@@ -1722,14 +1721,14 @@
   }());
   ```
 
-- 2.5.12.【参考】函数的复杂度不应过高。`eslint`: [complexity](https://eslint.org/docs/rules/complexity)
+- 2.5.12.【参考】函数的复杂度不应过高。`eslint`: [complexity](https://eslint.org/docs/latest/rules/complexity)
 
   过高的复杂度意味着代码难以维护和测试。我们推荐函数的复杂度不要超过以下阈值：
 
   - 圈复杂度不超过 **10**
   - 认知复杂度不超过 **15**
 
-- 2.5.13.【参考】函数的参数不应过多。`eslint`: [max-params](https://eslint.org/docs/rules/max-params)
+- 2.5.13.【参考】函数的参数不应过多。`eslint`: [max-params](https://eslint.org/docs/latest/rules/max-params)
   如果函数的参数过多，将不利于函数的维护和调用。这时你需要考虑是否函数做了太多的事情，是否有必要对其进行拆分。
 
   如果必须使用过多的参数，可以考虑用对象代替参数列表：
@@ -1748,7 +1747,7 @@
   doSomething({ param1: 1, param2: 2, param3: 3, param4: 4, param5: 5, param6: 6, param7: 7, param8: 8 });
   ```
 
-- 2.5.14.【强制】`generator` 函数内必须有 `yield` 语句。`eslint`: [require-yield](https://eslint.org/docs/rules/require-yield)
+- 2.5.14.【强制】`generator` 函数内必须有 `yield` 语句。`eslint`: [require-yield](https://eslint.org/docs/latest/rules/require-yield)
 
   如果一个 `generator` 中没有 `yield` 语句，那么这个 `generator` 就不是必须的。
 
@@ -1810,7 +1809,7 @@
 
 ### 2.6. 类
 
-- 2.6.1.【推荐】使用 `class` 语句声明类，而不是使用 `prototype。`
+- 2.6.1.【推荐】使用 `class` 语句声明类，而不是使用 `prototype`。
 
   `class` 语句是 `ES6` 中引入的用于声明类的语法糖，更加简洁易维护。
 
@@ -1859,7 +1858,7 @@
 
 - 2.6.3.【强制】避免不必要的 constructor。
 
-  ES6 class 会提供一个默认的 `constructor`，空 `constructor` 或者只调用父类的  `constructor` 是不必要的。eslint: [no-useless-constructor](https://eslint.org/docs/rules/no-useless-constructor)
+  ES6 class 会提供一个默认的 `constructor`，空 `constructor` 或者只调用父类的  `constructor` 是不必要的。eslint: [no-useless-constructor](https://eslint.org/docs/latest/rules/no-useless-constructor)
 
   ```javascript
   // bad - 以下两种 constructor 可以省略
@@ -1896,7 +1895,7 @@
   }
   ```
 
-- 2.6.4.【强制】正确地使用 super 方法。eslint: [constructor-super](https://eslint.org/docs/rules/constructor-super) [no-this-before-super](https://eslint.org/docs/rules/no-this-before-super)
+- 2.6.4.【强制】正确地使用 super 方法。eslint: [constructor-super](https://eslint.org/docs/latest/rules/constructor-super) [no-this-before-super](https://eslint.org/docs/latest/rules/no-this-before-super)
 
   - 子类的 `constructor` 中必须使用 `super()`，且必须在 `this` 和 `super` 关键词前调用
   - 非子类的 `constructor` 中不能使用 `super()`
@@ -1941,7 +1940,7 @@
   }
   ```
 
-- 2.6.5.【强制】避免重复的类成员命名。eslint: [no-dupe-class-members](https://eslint.org/docs/rules/no-dupe-class-members)
+- 2.6.5.【强制】避免重复的类成员命名。eslint: [no-dupe-class-members](https://eslint.org/docs/latest/rules/no-dupe-class-members)
 
   重复的类成员声明最终生效的将是最后一个：
 
@@ -1962,7 +1961,7 @@
 
 ### 2.7. 模块
 
-- 2.7.1.【推荐】使用 `ES6 modules` 而非其他非标准的模块系统。`eslint`: [import/module-systems](https://github.com/un-ts/eslint-plugin-import-x#module-systems)
+- 2.7.1.【推荐】使用 `ES6 modules` 而非其他非标准的模块系统。`eslint`: [import/no-commonjs](https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-commonjs.md)
 
   使用 `ES6 modules` (`import`/`export`)，而不是其他非标准的模块系统，如 `CommonJS`、`AMD`、`CMD`。
 
@@ -2089,7 +2088,7 @@
   export default function foo() {}
   ```
 
-- 2.7.11.【参考】不要在 `import` 时直接 `export。`
+- 2.7.11.【参考】不要在 `import` 时直接 `export`。
 
   虽然一行代码更简洁，但这不利于代码的可读性和一致性。
 
@@ -2103,13 +2102,13 @@
   export default Component;
   ```
 
-- 2.7.12.【参考】模块开发者选择EMS和CJS时，需要判断运行时环境：如果你的模块是只面向浏览器的则选择ESM；如果你的模块是只面向Node.js的则选择CJS，并且确定遵循[CJS命名空间规则](https://nodejs.org/api/esm.html#esm_commonjs_namespaces)；如果你的模块是2者都要兼容的，则ESM和CJS都要支持。
+- 2.7.12.【参考】模块开发者选择ESM和CJS时，需要判断运行时环境：如果你的模块是只面向浏览器的则选择ESM；如果你的模块是只面向Node.js的则选择CJS，并且确定遵循[CJS命名空间规则](https://nodejs.org/api/esm.html#esm_commonjs_namespaces)；如果你的模块是2者都要兼容的，则ESM和CJS都要支持。
 
   Node.js的模块，历史上Node.js遵循的是CommonJS，因此ES6 Module会有比较严重的兼容性问题。暂时没有特别好的解法，只能在Node.js中跟进运行时环境，判断使用模块标准。[讨论issue](https://github.com/nodejs/node/issues/33954)
 
 ### 2.8. 操作符
 
-- 2.8.1.【推荐】使用严格相等运算符。eslint: [eqeqeq](https://eslint.org/docs/rules/eqeqeq)
+- 2.8.1.【推荐】使用严格相等运算符。eslint: [eqeqeq](https://eslint.org/docs/latest/rules/eqeqeq)
 
   非严格相等运算符（`==` 和 `!=`）会在比较前将被比较值转换为相同类型，对于不熟悉 JS 语言特性的人来说，这可能造成不小的隐患。[了解更多](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 
@@ -2129,7 +2128,7 @@
   }
   ```
 
-- 2.8.2.【强制】不要使用一元自增自减运算符。`eslint`: [no-plusplus](https://eslint.org/docs/rules/no-plusplus)
+- 2.8.2.【强制】不要使用一元自增自减运算符。`eslint`: [no-plusplus](https://eslint.org/docs/latest/rules/no-plusplus)
 
   不要使用一元自增自减运算符（`++` 和 `--`），除非在 `for` 循环条件中。
 
@@ -2147,7 +2146,7 @@
   num -= 1;
   ```
 
-- 2.8.3.【强制】不要使用 `void` 运算符。`eslint`: [no-void](https://eslint.org/docs/rules/no-void)
+- 2.8.3.【强制】不要使用 `void` 运算符。`eslint`: [no-void](https://eslint.org/docs/latest/rules/no-void)
 
   在很老版本的 JS 中，`undefined` 值是可变的，因此使用 `void` 语句一般是用来得到一个 `undefined` 值。而在新版本的 JS 中，上面的问题已不复存在。因此出于程序可读性的考虑，禁止使用 `void` 运算符。
 
@@ -2159,7 +2158,7 @@
   const foo = undefined;
   ```
 
-- 2.8.4.【强制】避免嵌套的三元表达式。`eslint`: [no-nested-ternary](https://eslint.org/docs/rules/no-nested-ternary)
+- 2.8.4.【强制】避免嵌套的三元表达式。`eslint`: [no-nested-ternary](https://eslint.org/docs/latest/rules/no-nested-ternary)
 
   嵌套的三元表达式会降低代码可读性。
 
@@ -2172,7 +2171,7 @@
   const foo = bar ? baz : qu;
   ```
 
-- 2.8.5.【强制】避免不必要的三元表达式。`eslint`: [no-unneeded-ternary](https://eslint.org/docs/rules/no-unneeded-ternary)
+- 2.8.5.【强制】避免不必要的三元表达式。`eslint`: [no-unneeded-ternary](https://eslint.org/docs/latest/rules/no-unneeded-ternary)
 
   ```javascript
   // bad
@@ -2186,7 +2185,7 @@
   const baz = !c;
   ```
 
-- 2.8.6.【强制】混合使用多种操作符时，用小括号包裹分组。`eslint`: [no-mixed-operators](https://eslint.org/docs/rules/no-mixed-operators)
+- 2.8.6.【强制】混合使用多种操作符时，用小括号包裹分组。`eslint`: [no-mixed-operators](https://eslint.style/rules/no-mixed-operators)
 
   这可以更清晰地表达代码意图，提高可读性。四则运算符（`+`, `-`, `*`, `/`）可以不包裹，因为大多数人熟知它们的优先级。
 
@@ -2219,7 +2218,7 @@
 
 ### 2.9. 控制语句
 
-- 2.9.1.【强制】`switch` 语句中的 `case` 需要以 `break` 结尾。`eslint`: [no-fallthrough](https://eslint.org/docs/rules/no-fallthrough)
+- 2.9.1.【强制】`switch` 语句中的 `case` 需要以 `break` 结尾。`eslint`: [no-fallthrough](https://eslint.org/docs/latest/rules/no-fallthrough)
 
   ```javascript
   // bad
@@ -2245,7 +2244,7 @@
   }
   ```
 
-- 2.9.2.【推荐】`switch` 语句需要始终包含 `default` 分支。`eslint`: [default-case](https://eslint.org/docs/rules/default-case)
+- 2.9.2.【推荐】`switch` 语句需要始终包含 `default` 分支。`eslint`: [default-case](https://eslint.org/docs/latest/rules/default-case)
 
   在使用 `switch` 语句时，有时会出现因开发者忘记设置 `default` 而导致错误，因此建议总是给出 `default`。如果有意省略 `default`，请在 `switch` 语句末尾用 `// no default` 注释指明：
 
@@ -2302,7 +2301,7 @@
   }
   ```
 
-- 2.9.4.【参考】控制语句的嵌套层级不要过深。`eslint`: [max-depth](https://eslint.org/docs/rules/max-depth)
+- 2.9.4.【参考】控制语句的嵌套层级不要过深。`eslint`: [max-depth](https://eslint.org/docs/latest/rules/max-depth)
 
   控制语句的嵌套层级不要超过 **4** 级，否则将难以阅读和维护：
 
@@ -2326,7 +2325,7 @@
   }
   ```
 
-- 2.9.5.【强制】for 循环中的计数器应朝着正确方向移动。`eslint`: [for-direction](https://eslint.org/docs/rules/for-direction)
+- 2.9.5.【强制】for 循环中的计数器应朝着正确方向移动。`eslint`: [for-direction](https://eslint.org/docs/latest/rules/for-direction)
 
   当 `for` 循环中更新子句的计数器朝着错误的方向移动时，循环的终止条件将永远无法达到，这会导致死循环的出现。这时要么是程序出现了错误，要么应将 `for` 循环改为 `while` 循环。
 
@@ -2342,7 +2341,7 @@
   }
   ```
 
-- 2.9.6.【推荐】`for-in` 循环中需要对 `key` 进行验证。`eslint`: [guard-for-in](https://eslint.org/docs/rules/guard-for-in)
+- 2.9.6.【推荐】`for-in` 循环中需要对 `key` 进行验证。`eslint`: [guard-for-in](https://eslint.org/docs/latest/rules/guard-for-in)
 
   使用 `for-in` 循环时需要避免对象从原型链上继承来的属性也被遍历出来，因此保险的做法是对 key 是否是对象自身的属性进行验证：
 
@@ -2360,7 +2359,7 @@
   }
   ```
 
-- 2.9.7.【参考】如果一个 `if` 语句的结果总是返回一个 `return` 语句，那么最后的 `else` 是不必要的。`eslint`: [no-else-return](https://eslint.org/docs/rules/no-else-return)
+- 2.9.7.【参考】如果一个 `if` 语句的结果总是返回一个 `return` 语句，那么最后的 `else` 是不必要的。`eslint`: [no-else-return](https://eslint.org/docs/latest/rules/no-else-return)
 
   ```javascript
   // bad
@@ -2412,7 +2411,7 @@
 
 ### 2.10. 其他
 
-- 2.10.1.【强制】禁止使用 `eval`。`eslint`: [no-eval](https://eslint.org/docs/rules/no-eval)
+- 2.10.1.【强制】禁止使用 `eval`。`eslint`: [no-eval](https://eslint.org/docs/latest/rules/no-eval)
 
   `eval` 语句存在安全风险，可能导致注入攻击。
 
@@ -2428,7 +2427,7 @@
   const value = obj[key];
   ```
 
-- 2.10.2.【强制】禁止使用 `debugger`。`eslint`: [no-debugger](https://eslint.org/docs/rules/no-debugger)
+- 2.10.2.【强制】禁止使用 `debugger`。`eslint`: [no-debugger](https://eslint.org/docs/latest/rules/no-debugger)
 
   `debugger` 语句会让程序暂停，并在当前位置开启调试器。它通常在程序调试阶段使用，不应发布到线上。
 
@@ -2440,7 +2439,7 @@
   }
   ```
 
-- 2.10.3.【推荐】禁止使用 `alert`。`eslint`: [no-alert](https://eslint.org/docs/rules/no-alert)
+- 2.10.3.【推荐】禁止使用 `alert`。`eslint`: [no-alert](https://eslint.org/docs/latest/rules/no-alert)
 
   `alert` 语句会使浏览器弹出原生警告框，这可能让人感觉你的程序出错了。如果需要对用户弹出警告信息，好的做法是使用第三方的弹窗组件或自己定义警告框样式。同理，`confirm` 和 `prompt` 语句也不应被使用。
 
@@ -2452,7 +2451,7 @@
   Alert('Oops!');
   ```
 
-- 2.10.4.【推荐】生产环境禁止使用 `console`。eslint: [no-console](https://eslint.org/docs/rules/no-console)
+- 2.10.4.【推荐】生产环境禁止使用 `console`。eslint: [no-console](https://eslint.org/docs/latest/rules/no-console)
 
   `console` 语句通常在调试阶段使用，发布上线前，应该去掉代码里所有的 `console` 语句。
 
@@ -2472,7 +2471,7 @@
   utils.log('Some debug messages..');
   ```
 
-- 2.10.5.【强制】禁止对原生对象或只读的全局对象进行赋值。`eslint`: [no-global-assign](https://eslint.org/docs/rules/no-global-assign)
+- 2.10.5.【强制】禁止对原生对象或只读的全局对象进行赋值。`eslint`: [no-global-assign](https://eslint.org/docs/latest/rules/no-global-assign)
 
   JS 执行环境中会包含一些全局变量和原生对象，如浏览器环境中的 `window`，node 环境中的 `global` 、`process`，`Object`，`undefined` 等。除了像 `window` 这样的众所周知的对象，JS 还提供了数百个内置全局对象，你可能在定义全局变量时无意对它们进行了重新赋值，因此最好的做法是不要定义全局变量。
 
@@ -2565,7 +2564,7 @@
   }
   ```
 
-- 3.3.【强制】注释内容和注释符之间需要有一个空格。eslint: [spaced-comment](https://eslint.org/docs/rules/spaced-comment)
+- 3.3.【强制】注释内容和注释符之间需要有一个空格。eslint: [spaced-comment](https://eslint.style/rules/spaced-comment)
 
   注释内容和注释符之间需要有一个空格，以增加可读性：
 
@@ -2601,7 +2600,7 @@
   }
   ```
 
-- 3.4.【参考】合理使用特殊注释标记。eslint: [no-warning-comments](https://eslint.org/docs/rules/no-warning-comments)
+- 3.4.【参考】合理使用特殊注释标记。eslint: [no-warning-comments](https://eslint.org/docs/latest/rules/no-warning-comments)
 
   有时我们发现某个可能的 bug，但因为一些原因还没法修复；或者某个地方还有一些待完成的功能，这时我们需要使用相应的特殊标记注释来告知未来的自己或合作者。最常用的特殊标记有两种：
 
@@ -2667,9 +2666,9 @@
 
 ## 4. 命名
 
-- 4.1.【参考】文件名：使用小写字母命名。考虑到部分操作系统（如 `Windows`, ·）下文件系统大小写不敏感，推荐使用 `-` 连接。例如：`hello-world.js`。
+- 4.1.【参考】文件名：使用小写字母命名。考虑到部分操作系统（如 `Windows`、`macOS`）下文件系统大小写不敏感，推荐使用 `-` 连接。例如：`hello-world.js`。
 
-- 4.2.【参考】使用小驼峰（`camelCase`）命名原始类型、对象、函数、实例。[camelcase](https://eslint.org/docs/rules/camelcase)
+- 4.2.【参考】使用小驼峰（`camelCase`）命名原始类型、对象、函数、实例。[camelcase](https://eslint.org/docs/latest/rules/camelcase)
 
   ```javascript
   // bad
@@ -2683,7 +2682,7 @@
   function thisIsMyFunction() {}
   ```
 
-- 4.3.【强制】使用大驼峰（`PascalCase`）命名类和构造函数。`eslint`: [new-cap](https://eslint.org/docs/rules/new-cap)
+- 4.3.【强制】使用大驼峰（`PascalCase`）命名类和构造函数。`eslint`: [new-cap](https://eslint.org/docs/latest/rules/new-cap)
 
   ```javascript
   // bad
@@ -2765,7 +2764,7 @@
   export default AnObject;
   ```
 
-- 4.6.【参考】命名不要以下划线开头或结尾。`eslint`: [no-underscore-dangle](https://eslint.org/docs/rules/no-underscore-dangle)
+- 4.6.【参考】命名不要以下划线开头或结尾。`eslint`: [no-underscore-dangle](https://eslint.org/docs/latest/rules/no-underscore-dangle)
 
   JS 没有私有属性或私有方法的概念，这样的命名可能会让人误解。
 
@@ -2783,4 +2782,4 @@
 
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
-- [ESLint rules](https://eslint.org/docs/rules/)
+- [ESLint rules](https://eslint.org/docs/latest/rules/)

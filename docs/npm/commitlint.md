@@ -1,4 +1,3 @@
-
 # @linter-spec/commitlint-config
 
 :::tip

@@ -1,11 +1,10 @@
-
 # CHANGELOG 规范
 
 ## 前言
 
 作为一个开发者，我必须为我的项目维护一个更新日志（以下简称 `Changelog`）吗？
 
-1. 如果你在维护一个开源项目，或者公司内部的底层技术产品，那么提供一个 `Changelog` `是必需的。开发者用户很可能需要从一个低版本升级到最新版，Changelog` 可以帮助他们了解新版本有哪些变化。
+1. 如果你在维护一个开源项目，或者公司内部的底层技术产品，那么提供一个 `Changelog` 是必需的。开发者用户很可能需要从一个低版本升级到最新版，`Changelog` 可以帮助他们了解新版本有哪些变化。
 2. 如果你在开发一个业务应用，那么 `Changelog` 不是必需的。然而提供一个 `Changelog` 会更好，因为其他协作者或是交接方能更直观地看到业务逻辑的演变。
 
 [Git 规范](./git) 已经对 `Git` 提交日志的格式进行了约束，为何还要再约束 `Changelog` 的格式呢？
@@ -135,7 +134,7 @@
   ## 1.0.0-alpha
   ```
 
-- 2.4.【推荐】版本号增加一个超链接，指向当前版本和上一个版本之间的 `diff
+- 2.4.【推荐】版本号增加一个超链接，指向当前版本和上一个版本之间的 `diff`
 
   ```markdown
   <!-- bad -->
@@ -144,7 +143,7 @@
 
   <!-- good -->
 
-  ## [2.0.0](https://version-diff-url)
+  ## [2.0.0](https://github.com/owner/repo/compare/v1.0.0...v2.0.0)
   ```
 
 - 2.5.【强制】更新日期 `date` 采用 `yyyy-MM-dd` 格式
@@ -152,16 +151,16 @@
   ```markdown
   <!-- bad -->
 
-  ## [2.0.0](https://version-diff-url) (20200905)
+  ## [2.0.0](https://github.com/owner/repo/compare/v1.0.0...v2.0.0) (20200905)
 
-  ## [2.0.0](https://version-diff-url) (2020-9-5)
+  ## [2.0.0](https://github.com/owner/repo/compare/v1.0.0...v2.0.0) (2020-9-5)
 
   <!-- good -->
 
-  ## [2.0.0](https://version-diff-url) (2020-09-05)
+  ## [2.0.0](https://github.com/owner/repo/compare/v1.0.0...v2.0.0) (2020-09-05)
   ```
 
-- 2.6.【推荐】更新类型 `type` 与 Git message header 中的 [`type`](./git#1.3.1-type) 相关联，可以不一一对应
+- 2.6.【推荐】更新类型 `type` 与 Git message header 中的 [`type`](./git#_1-3-1-type) 相关联，可以不一一对应
 
   `type` 用以说明更新的类型，推荐值如下：
 
@@ -202,7 +201,7 @@
 
 - 用 hooks 重构 Upload。
 
-## [4.5.4](https://github.com/ant-design/ant-design/compare/4.5.3...4.5.4)(2020-08-12)
+## [4.5.4](https://github.com/ant-design/ant-design/compare/4.5.3...4.5.4) (2020-08-12)
 
 ### 新增
 

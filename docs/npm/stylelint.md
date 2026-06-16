@@ -1,4 +1,3 @@
-
 # @linter-spec/stylelint-config
 
 :::tip

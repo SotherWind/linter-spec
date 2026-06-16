@@ -1,4 +1,3 @@
-
 # @linter-spec/markdownlint-config
 
 :::tip

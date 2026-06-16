@@ -1,4 +1,3 @@
-
 # @linter-spec/eslint-plugin
 
 除了本包，你需要同时安装 [ESLint](https://eslint.org/)。本插件面向 **ESLint 9 扁平配置（flat config）**。
@@ -51,7 +50,7 @@ export default [
 
 #### 规则内容
 
-参照 [https://docs.npmjs.com/about-semantic-versioning](https://docs.npmjs.com/about-semantic-versioning)。
+参照 [npm 语义化版本说明](https://docs.npmjs.com/about-semantic-versioning)。
 
 使用 `*`、 `x` 和 `> x` 指定版本会被警告。
 
@@ -65,7 +64,7 @@ export default [
 
 ```js
 var test = 'http://example.com';
-var jsx = <img src="http://example.com">;
+var jsx = <img src="http://example.com" />;
 ```
 
 #### 何时不适用
@@ -106,7 +105,7 @@ var jsx = <img src="http://example.com">;
 
 #### 规则内容
 
-在包含 `password` `token` and `secret` 名称的 key 中禁止使用纯文本值。
+在包含 `password`、`token` 和 `secret` 名称的 key 中禁止使用纯文本值。
 
 **错误**代码示例:
 

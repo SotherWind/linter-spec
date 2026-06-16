@@ -1,4 +1,3 @@
-
 # linter-spec
 
 `linter-spec` 是[linter-spec 前端编码规范工程化](https://sotherwind.github.io/linter-spec/)的配套 Lint 工具，可以为项目一键接入规范、一键扫描和修复规范问题，保障项目的编码规范和代码质量。
@@ -43,7 +42,7 @@ npm install -g @linter-spec/cli
   - `eslint.config.mjs`：ESLint 扁平配置（导入 `@linter-spec/eslint-config`，忽略项内联其中——ESLint 9 已不再使用 `.eslintignore`）
   - `stylelint.config.mjs`、`.stylelintignore`：stylelint 配置（继承 `@linter-spec/stylelint-config`）及黑名单文件
   - `commitlint.config.mjs`：commitlint 配置（继承 `@linter-spec/commitlint-config`）
-  - `.markdownlint.cjs`、`.markdownlintignore`：markdownlint 规则集（`module.exports = require('@linter-spec/markdownlint-config').default`——共享配置为 ESM-only，故用 `.cjs` 透传；选 `.markdownlint.cjs` 而非 `-cli2` 后缀，是因为这是 VS Code markdownlint 扩展读取的 ruleset 槽位）及黑名单文件
+  - `.markdownlint-cli2.cjs`：markdownlint-cli2 配置（`module.exports = { config: require('@linter-spec/markdownlint-config').default, ignores: [...] }`——共享配置为 ESM-only，故用 `.cjs` 透传其 default 导出作为 `config`；按 cli2 约定该文件优先级高于 `.markdownlint.cjs`，会被 markdownlint-cli2 及 VS Code markdownlint 扩展同时读取），忽略项内联在 `ignores` 字段中（不再单独生成 `.markdownlintignore`）
   - `prettier.config.mjs`：符合规范的 [Prettier 配置](https://prettier.io/docs/en/configuration.html)
   - `.editorconfig`：符合规范的 [editorconfig](https://editorconfig.org/)
   - `.vscode/extensions.json`：规范相关的 [VSCode 插件推荐](https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions)，包括 `ESLint`、`stylelint`、`markdownlint`、`prettier` 等
@@ -51,7 +50,7 @@ npm install -g @linter-spec/cli
   - `linter-spec.config.mjs`：linter-spec 自身的配置，如启用的功能等
 - 配置 git commit 卡口：使用 [husky](https://www.npmjs.com/package/husky) 设置代码提交卡口，在 git commit 时会运行 `linter-spec commit-file-scan` 和 `linter-spec commit-msg-scan` 分别对提交文件和提交信息进行规范检查。`linter-spec commit-file-scan` 默认仅对 error 问题卡口，如果你想对 warn 问题也卡口，可以增加 `--strict` 参数以开启严格模式
 
-> 注 1：如果项目已经配置过 ESLint、stylelint 等 Linter，执行 `linter-spec init` 将会提示存在冲突的依赖和配置，并在得到确认后进行覆盖：
+> 注 1：如果项目已经配置过 ESLint、stylelint 等 Linter，执行 `linter-spec init` 将会提示存在冲突的依赖和配置，并在得到确认后进行覆盖。
 >
 > 注 2：如果项目的 .vscode/ 目录被 .gitignore 忽略，可以在拉取项目后单独执行 `linter-spec init --vscode` 命令写入 `.vscode/extensions.json` 和 `.vscode/settings.json` 配置文件
 
@@ -66,7 +65,7 @@ npm install -g @linter-spec/cli
 - `-i` `--include <dirpath>` 指定要进行规范扫描的目录
 - `--no-ignore` 忽略 eslint 的 ignore 配置文件和 ignore 规则
 
-> 注 1：事实上，你可以在任意目录执行 `linter-spec scan` `linter-spec` 会根据文件类型、JSON 等特征嗅探项目类型。但我们还是推荐在执行过 `linter-spec init` 的项目根目录执行 `linter-spec scan`，以得到最准确的扫描结果。
+> 注 1：事实上，你可以在任意目录执行 `linter-spec scan`，它会根据文件类型等特征嗅探项目类型。但我们还是推荐在执行过 `linter-spec init` 的项目根目录执行 `linter-spec scan`，以得到最准确的扫描结果。
 >
 > 注 2: `linter-spec` 会根据项目内有无 eslint 和 stylelint 配置文件判断使用项目的配置文件还是 `linter-spec` 默认配置进行扫描。若使用项目的，在未安装依赖时会帮其安装（执行 npm i）。若使用项目配置扫描失败，则使用默认配置扫描
 
