@@ -26,16 +26,17 @@ export function registerCommitFileScan(program: Command, cwd: string): void {
       const checking = ora();
       checking.start(messages.runCommitChecking);
 
-      const { results, errorCount, warningCount } = await scan({
+      const { results, errorCount, warningCount, runErrors } = await scan({
         cwd,
         include: cwd,
         quiet: !cmd.strict,
         files: await getCommitFiles({ cwd }),
       });
 
-      if (errorCount > 0 || (cmd.strict && warningCount > 0)) {
+      if (runErrors.length > 0 || errorCount > 0 || (cmd.strict && warningCount > 0)) {
         checking.fail();
         printReport(results, false);
+        runErrors.forEach((e) => log.error(e));
         process.exitCode = 1;
       } else {
         checking.succeed();

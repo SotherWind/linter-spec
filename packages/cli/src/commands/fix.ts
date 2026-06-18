@@ -3,6 +3,7 @@ import ora from 'ora';
 
 import { hasLocalLintConfig, installProjectDepsIfMissing } from '../actions/init/install-deps.js';
 import scan from '../actions/scan/index.js';
+import log from '../utils/log.js';
 import { messages } from '../utils/messages.js';
 import printReport from '../utils/print-report.js';
 
@@ -23,14 +24,21 @@ export function registerFix(program: Command, cwd: string): void {
       const checking = ora();
       checking.start(messages.runFixing);
 
-      const { results } = await scan({
+      const { results, errorCount, runErrors } = await scan({
         cwd,
         fix: true,
         include: cmd.include || cwd,
         ignore: cmd.ignore,
       });
 
-      checking.succeed();
+      if (runErrors.length > 0 || errorCount > 0) checking.fail();
+      else checking.succeed();
+
       if (results.length > 0) printReport(results, true);
+      runErrors.forEach((e) => log.error(e));
+
+      if (runErrors.length > 0 || errorCount > 0) {
+        process.exitCode = 1;
+      }
     });
 }

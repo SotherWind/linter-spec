@@ -3,6 +3,7 @@ import ora from 'ora';
 
 import { hasLocalLintConfig, installProjectDepsIfMissing } from '../actions/init/install-deps.js';
 import scan from '../actions/scan/index.js';
+import log from '../utils/log.js';
 import { messages } from '../utils/messages.js';
 import printReport from '../utils/print-report.js';
 
@@ -41,6 +42,10 @@ export function registerScan(program: Command, cwd: string): void {
       else checking.succeed();
 
       if (results.length > 0) printReport(results, false);
-      runErrors.forEach((e) => console.log(e));
+      runErrors.forEach((e) => log.error(e));
+
+      if (runErrors.length > 0 || errorCount > 0) {
+        process.exitCode = 1;
+      }
     });
 }

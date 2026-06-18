@@ -83,6 +83,12 @@ describe('CLI binary', () => {
       expect(exitCode).toBe(0);
     });
 
+    test('project with lint errors exits 1', async () => {
+      fs.writeFileSync(path.join(dir, 'bad.js'), 'function demo() {\n  debugger;\n}\n');
+      const { exitCode } = await cli(['scan'], { cwd: dir });
+      expect(exitCode).toBe(1);
+    });
+
     test('--output-report writes the report file', async () => {
       fs.writeFileSync(path.join(dir, 'bad.js'), 'function demo() {\n  debugger;\n}\n');
       await cli(['scan', '--output-report'], { cwd: dir });
