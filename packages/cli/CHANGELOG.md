@@ -1,5 +1,11 @@
 # @linter-spec/cli
 
+## 1.0.5
+
+### Patch Changes
+
+- 109bbb1: Return non-zero exit codes when CLI scans find errors or linter execution fails.
+
 ## 1.0.4
 
 ### Patch Changes
